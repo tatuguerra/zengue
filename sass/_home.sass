@@ -1,0 +1,142 @@
+#home
+
+  h2
+    font-size: em-calc(50)
+    font-weight: 800
+    text-transform: uppercase
+    margin-bottom: 40px
+    +single-text-shadow
+
+    &.red
+      color: $red
+
+    &.white
+      color: #FFF
+
+  h3
+    font-size: em-calc(40)
+    font-weight: 800
+    text-transform: uppercase
+    +single-text-shadow
+
+    &.red
+      color: $red
+
+    &.white
+      color: #FFF
+
+    &.right
+      text-align: right
+
+  .section
+    padding: 40px 0
+
+  #welcome
+    background: #ebe74e
+    padding: 40px 0
+
+    h2
+      color: $red
+      font-weight: 300
+      font-size: em-calc(44)
+      text-transform: uppercase
+      text-align: right
+
+    .clouds
+      color: #000
+      text-align: center
+
+      .one
+        font-size: em-calc(44)
+      .two
+        font-size: em-calc(88)
+      .three
+        font-size: em-calc(160)
+
+
+  #about, #supporters
+    .orbit-slide-number, .orbit-timer, .orbit-bullets-container
+      display: none
+
+  #supporters
+    background: $red
+
+    .stamp
+      font-size: em-calc(100)
+      color: darken($red, 10%)
+
+    .next-tweet
+      color: white
+      font-size: em-calc(40)
+    .slideshow
+      margin-top: 10%
+
+      li
+        padding: 0 50px
+
+    .tweet
+      p
+        color: white
+        font-size: em-calc(20)
+        font-weight: 200
+
+    .author
+      color: white
+      font-size: em-calc(20)
+      font-weight: 200
+      text-align: right
+
+    .live
+      li
+        list-style: none
+        border-bottom: 1px solid darken($red, 10%)
+        padding: 10px 0
+
+        &:last-child
+          border-bottom: 0
+        p
+          margin-bottom: 10px
+
+      .tweet, .author
+        font-size: em-calc(13)
+
+  #news
+
+    h4
+      font-size: em-calc(18)
+      font-weight: 200
+
+    p
+      font-size: em-calc(13)
+      text-align: justify
+
+  #help
+    background: $red
+
+    .ways
+      text-align: center
+
+      li
+        display: inline-block
+        margin-right: 5%
+        margin-left: 5%
+
+        a
+          color: #004454
+
+        i
+          color: #FFF
+          font-size: em-calc(200)
+          &:hover
+            +text-shadow(darken($red, 10%) 6px 4px 0)
+
+        p
+          font-weight: 200
+          font-size: em-calc(40)
+          text-transform: uppercase
+  #faq
+    dd
+      a
+        color: $red
+        font-size: em-calc(20)
+        padding: 0.5em 0
