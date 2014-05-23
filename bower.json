@@ -1,0 +1,7 @@
+{
+    "name": "Vermelho Vivo",
+    "version": "0.1",
+    "dependencies": {
+        "foundation": "zurb/bower-foundation"
+    }
+}
