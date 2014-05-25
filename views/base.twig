@@ -13,15 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="pingback" href="{{site.pingback_url}}">
     {{function('wp_head')}}
-    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="{{site.theme.link}}/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
     <header id="header">
-      <div class="row">
+      <div class="sticky">
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <a class="hdr-logo-link" href="/" title="Timber" rel="home">vermelhovivo</a>
+              <a class="hdr-logo-link" href="/" title="Timber" rel="home">
+                <h1 class="title">vermelho<div class="red">vivo</div></h1>
+              </a>
             </li>
             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -48,8 +50,8 @@
       {% include 'footer.twig' %}
     </footer>
     {{ function('wp_footer') }}
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="{{site.theme.link}}/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{site.theme.link}}/bower_components/foundation/js/foundation.min.js"></script>
+    <script src="{{site.theme.link}}/js/app.js"></script>
   </body>
 </html>
