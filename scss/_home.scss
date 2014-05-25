@@ -1,0 +1,37 @@
+#destaques {
+  background-color: #ececec;
+  padding: 20px 0;
+
+  .post {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    display: block;
+    position: relative;
+
+    .content {
+      padding: 10px;
+
+      .meta {
+        font-size: rem-calc(13);
+        bottom: 10px;
+        position: absolute;
+      }
+    }
+
+    &.main {
+      height: 570px;
+      .title {
+        font-size: rem-calc(27);
+      }
+    }
+
+    &.olders {
+      height: 275px;
+      .title {
+        font-size: rem-calc(17);
+      }
+    }
+
+  }
+
+}
