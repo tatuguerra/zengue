@@ -15,6 +15,25 @@
         font-size: rem-calc(13);
         bottom: 10px;
         position: absolute;
+        width: 100%;
+
+        .date {
+            color: $primary-color;
+            position: absolute;
+            right: 20px;
+            bottom: 0;
+            text-align: center;
+            text-transform: uppercase;
+            .day {
+              font-size: rem-calc(20);
+              font-weight: 300;
+              line-height: 10px;
+            }
+            .month {
+              font-size: rem-calc(12);
+              font-weight: 700;
+            }
+        }
       }
     }
 
@@ -22,6 +41,17 @@
       height: 570px;
       .title {
         font-size: rem-calc(27);
+      }
+      .meta {
+        .date {
+          .day {
+            font-size: rem-calc(30);
+            line-height: 30px;
+          }
+          .month {
+            font-size: rem-calc(16);
+          }
+        }
       }
     }
 

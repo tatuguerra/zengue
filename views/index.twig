@@ -11,6 +11,10 @@
           <h2 class="title">{{destaque.title}}</h2>
           {{destaque.content | excerpt(30)}}
           <div class="meta">
+            <div class="date">
+              <div class="day">{{destaque.post_date | date("d")}}</div>
+              <div class="month">{{destaque.post_date | date("M")}}</div>
+            </div>
             por <a href="">{{destaque.author}}</a>
           </div>
         </div>
@@ -26,6 +30,10 @@
             <div class="content">
               <h3 class="title">{{destaque.title}}</h3>
               <div class="meta">
+                <div class="date">
+                  <div class="day">{{destaque.post_date | date("d")}}</div>
+                  <div class="month">{{destaque.post_date | date("M")}}</div>
+                </div>
                 por <a href="">{{destaque.author}}</a>
               </div>
             </div>
