@@ -71,4 +71,32 @@
   </div>
 </section>
 
+<section id="social">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="section-title">Últimas notícias</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-5 columns">
+      <div class="last-news">
+        <ul class="list-last-news">
+          {% for noticia in ultimas_noticias %}
+          <li class="news">
+            <a href="{{noticia.link}}">
+              <h3 class="title {{ cycle(['even','odd'],loop.index) }}">{{noticia.title}}</h3>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="text-right view-all">
+        <a href="#">ver todas</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 {% endblock %}

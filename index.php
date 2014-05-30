@@ -20,6 +20,9 @@
 	$context['posts'] = Timber::get_posts();
         $args = 'category_name=destaques';
 	$context['destaques'] = Timber::get_posts($args);
+        $destaque_id = url_to_postid(destaques);
+        $last_news_args = 'cat=-4';
+	$context['ultimas_noticias'] = Timber::get_posts($last_news_args);
 
 	$templates = array('index.twig');
 	if (is_home()){
