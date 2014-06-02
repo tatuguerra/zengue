@@ -6,7 +6,6 @@ jQuery(document).ready(function($) {
         return this;
     }
 
-
     $(".tweets > .orbit-container").center();
     $(".links-list").center();
 

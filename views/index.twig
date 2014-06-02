@@ -53,7 +53,7 @@
       <h2 class="section-title">Videos</h2>
     </div>
   </div>
-  <div class="row">
+  <div class="row"><!--
     <div class="large-4 columns">
       <div class="flex-video"> <iframe width="420" height="315" src="//www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen></iframe> </div>
     </div>
@@ -63,7 +63,7 @@
     <div class="large-4 columns">
       <div class="flex-video"> <iframe width="420" height="315" src="//www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen></iframe> </div>
     </div>
-  </div>
+  </div>-->
   <div class="row">
     <div class="large-2 large-offset-10 columns text-right">
       <a href="#">ver todos</a>
@@ -77,11 +77,11 @@
       <h2 class="section-title">Últimas notícias</h2>
     </div>
   </div>
-  <div class="row">
-    <div class="large-5 columns">
+  <div class="row" data-equalizer>
+    <div class="large-5 columns" data-equalizer-watch>
       <div class="last-news">
         <ul class="list-last-news">
-          {% for noticia in ultimas_noticias %}
+          {% for noticia in posts %}
           <li class="news">
             <a href="{{noticia.link}}">
               <h3 class="title {{ cycle(['even','odd'],loop.index) }}">{{noticia.title}}</h3>
@@ -90,13 +90,43 @@
           {% endfor %}
         </ul>
       </div>
+    </div>
 
-      <div class="text-right view-all">
-        <a href="#">ver todas</a>
+    <div class="large-5 columns" data-equalizer-watch>
+      <div class="tweets" data-equalizer-watch>
+        <ul class="example-orbit" data-orbit>
+          <li class="tweet">
+            <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing
+            elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
+            <a href="#" class="author right">@loremipsum</a>
+          </li>
+          <li class="tweet">
+            <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing
+            elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
+            <a href="#" class="author right">@loremipsum</a>
+          </li>
+        </ul>
+        <a href="#" class="hashtag">#vermelho<span class="red">vivo</span></a>
       </div>
-
+    </div>
+    <div class="large-2 columns" data-equalizer-watch>
+      <div class="social-links" data-equalizer-watch>
+        <ul class="links-list">
+          <li class="link">
+            <a href="#">
+              <i class="fa fa-twitter-square"></i> seguir</a>
+          </li>
+          <li class="link">
+            <a href="#">
+              <i class="fa fa-facebook-square"></i> curtir</a>
+          </li>
+          <li class="link">
+            <a href="#">
+              <i class="fa fa-youtube"></i> assistir</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
-
 {% endblock %}

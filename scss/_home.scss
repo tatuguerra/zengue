@@ -78,8 +78,7 @@
     border-right: 1px solid #000;
 
     .list-last-news {
-      margin-left: 0;
-      padding-right: 20px;
+      margin: 0;
       .news {
         list-style: none;
 
@@ -100,5 +99,45 @@
 
   .view-all {
     margin-right: 20px;
+  }
+
+  .tweets {
+    .tweet {
+      .content {
+        font-weight: 300;
+        padding: 10px 40px;
+        margin: 0;
+      }
+      .author {
+        font-weight: 700;
+        margin-right: 40px;
+      }
+    }
+    .hashtag {
+      color: #000;
+      bottom: 0;
+      position: absolute;
+      right: 20px;
+      font-size: rem-calc(23);
+      .red {
+        color: $primary-color;
+        display: inline-block;
+      }
+    }
+  }
+
+  .social-links {
+    .links-list {
+      position: relative;
+      .link {
+        list-style: none;
+        a {
+          font-size: rem-calc(20);
+          .fa {
+            color: black;
+          }
+        }
+      }
+    }
   }
 }
