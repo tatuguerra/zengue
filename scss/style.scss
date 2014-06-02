@@ -3,9 +3,12 @@
 /*!  Author: Guilherme Guerra <guerinha@comum.org> */
 /*!  Version: 0.1 */
 
+$fa-font-path: "bower_components/fontawesome/fonts";
+
 @import "compass";
 @import "settings";
 @import "foundation";
+@import "font-awesome";
 @import "fonts";
 @import "base";
 @import "home";

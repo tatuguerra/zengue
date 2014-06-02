@@ -1,7 +1,8 @@
 {
-    "name": "Vermelho Vivo",
-    "version": "0.1",
-    "dependencies": {
-        "foundation": "zurb/bower-foundation"
-    }
+  "name": "Vermelho Vivo",
+  "version": "0.1",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "fontawesome": "~4.1.0"
+  }
 }
