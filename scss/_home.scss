@@ -11,9 +11,17 @@
     .post-content {
       padding: 10px;
 
+      .title {
+        color: #000;
+        &:hover {
+          color: lighten(#000, 40%);
+        }
+      }
+
       .content {
         font-weight: 300;
         font-size: rem-calc(16);
+        color: #000;
       }
 
       .meta {
@@ -21,6 +29,7 @@
         bottom: 10px;
         position: absolute;
         width: 100%;
+        color: #000;
 
         .date {
             color: $primary-color;

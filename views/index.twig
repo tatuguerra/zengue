@@ -6,20 +6,23 @@
     {% for destaque in destaques | slice(0, 1) %}
     <div class="large-6 columns">
       <div class="post main">
-        <img src="{{destaque.thumbnail.src}}" class="">
-        <div class="post-content">
-          <h2 class="title">{{destaque.title}}</h2>
-          <div class="content">
-            {{destaque.content | excerpt(30)}}
-          </div>
-          <div class="meta">
-            <div class="date">
-              <div class="day">{{destaque.post_date | date("d")}}</div>
-              <div class="month">{{destaque.post_date | date("M")}}</div>
+        <a href="{{destaque.permalink}}">
+          <img src="{{destaque.thumbnail.src}}" class="">
+          <div class="post-content">
+
+            <h2 class="title">{{destaque.title}}</h2>
+            <div class="content">
+              {{destaque.content | excerpt(30)}}
             </div>
-            por <a href="">{{destaque.author}}</a>
+        </a>
+        <div class="meta">
+          <div class="date">
+            <div class="day">{{destaque.post_date | date("d")}}</div>
+            <div class="month">{{destaque.post_date | date("M")}}</div>
           </div>
+          por <a href="{{destaque.get_author.get_link}}">{{destaque.author}}</a>
         </div>
+          </div>
       </div>
     </div>
     {% endfor %}
@@ -28,17 +31,19 @@
         {% for destaque in destaques | slice(1, 4) %}
         <li>
           <div class="post olders">
-            <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
-            <div class="post-content">
-              <h3 class="title">{{destaque.title}}</h3>
-              <div class="meta">
-                <div class="date">
-                  <div class="day">{{destaque.post_date | date("d")}}</div>
-                  <div class="month">{{destaque.post_date | date("M")}}</div>
-                </div>
-                por <a href="">{{destaque.author}}</a>
+            <a href="{{destaque.permalink}}">
+              <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
+              <div class="post-content">
+                <h3 class="title">{{destaque.title}}</h3>
+            </a>
+            <div class="meta">
+              <div class="date">
+                <div class="day">{{destaque.post_date | date("d")}}</div>
+                <div class="month">{{destaque.post_date | date("M")}}</div>
               </div>
+              por <a href="{{destaque.get_author.get_link}}">{{destaque.author}}</a>
             </div>
+              </div>
           </div>
         </li>
         {% endfor %}
