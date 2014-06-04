@@ -16,40 +16,63 @@
     <script src="{{site.theme.link}}/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
-    <header id="header">
-      <div class="sticky">
-        <nav class="top-bar" data-topbar>
-          <ul class="title-area">
-            <li class="name">
-              <a class="hdr-logo-link" href="/" title="Timber" rel="home">
-                <h1 class="title">vermelho<div class="red">vivo</div></h1>
+    <a name="top"></a>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li>
+              <label class="left-off-canvas-toggle">
+                Colunistas <i class="fa fa-times right"></i>
+              </label>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="http://profile.ak.fbcdn.net/hprofile-ak-frc3/t1.0-1/p50x50/1016966_10200686019286311_930941555_t.jpg"> @guerrinha {{author.name}}
               </a>
             </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+
           </ul>
-          <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-              {% for item in menu.items %}
-              <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-                <a href="{{item.link}}">{{item.title}}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </section>
-        </nav><!-- #access -->
-        </div>
-    </header>
+        </aside>
+
+        <header id="header">
+          <div class="sticky">
+            <nav class="top-bar" data-topbar>
+              <ul class="title-area">
+                <li class="name">
+                  <a class="hdr-logo-link" href="/" title="Timber" rel="home">
+                    <h1 class="title">vermelho<div class="red">vivo</div></h1>
+                  </a>
+                </li>
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+              </ul>
+              <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                  <li><a href="/">inicio</a></li>
+                  <li><a href="#" class="">notícias</a></li>
+                  <li><a href="#" class="left-off-canvas-toggle blah">colunistas</a></li>
+                  <li><a href="/videos">vídeos</a></li>
+                  <li><a href="/sobre">sobre</a></li>
+                </ul>
+              </section>
+            </nav><!-- #access -->
+          </div>
+        </header>
 
         {% block content %}
 
         {% endblock %}
 
-    <footer id="footer">
-      {% include 'footer.twig' %}
-    </footer>
-    {{ function('wp_footer') }}
+        <footer id="footer">
+          {% include 'footer.twig' %}
+        </footer>
+        {{ function('wp_footer') }}
+        <a class="exit-off-canvas"></a>
+      </div>
+    </div>
     <script src="{{site.theme.link}}/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="{{site.theme.link}}/bower_components/foundation/js/foundation.min.js"></script>
     <script src="{{site.theme.link}}/js/app.js"></script>
