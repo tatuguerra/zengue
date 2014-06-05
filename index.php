@@ -19,6 +19,8 @@
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
         $args = 'category_name=destaques';
+        $movie_args = 'post_type=videos';
+	$context['videos'] = Timber::get_posts($movie_args);
 	$context['destaques'] = Timber::get_posts($args);
         $destaque_id = url_to_postid(destaques);
         $last_news_args = 'cat=-4';
