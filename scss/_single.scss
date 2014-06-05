@@ -1,0 +1,16 @@
+#single {
+  padding-top: 40px;
+  .article-content  {
+    p {
+      font-weight: 300;
+      font-size: rem-calc(18);
+    }
+
+    .article-h2 {
+      margin: 0;
+    }
+    .blog-author {
+      font-size: rem-calc(16);
+    }
+  }
+}
