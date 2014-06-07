@@ -54,7 +54,7 @@ $body-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #d9233d;
+$primary-color: #b12029;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -1168,7 +1168,7 @@ $orbit-nav-arrow-color-hover: darken($primary-color, 10%);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #353535;
+$topbar-bg-color: darken($primary-color, 3);
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1190,15 +1190,15 @@ $topbar-title-font-size: rem-calc(50);
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: #fff;
-$topbar-link-color-hover: $primary-color;
-// $topbar-link-color-active: #fff;
-// $topbar-link-color-active-hover: $main-color;
+$topbar-link-color-hover: darken($primary-color, 60);
+$topbar-link-color-active: darken($primary-color, 60);
+$topbar-link-color-active-hover: $topbar-bg;
 $topbar-link-weight: 400;
 $topbar-link-font-size: rem-calc(15);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: none;
-// $topbar-link-bg-active: $primary-color;
+$topbar-link-hover-lightness: 0%; // Darken by 10%
+$topbar-link-bg: $topbar-bg;
+$topbar-link-bg-hover: $topbar-bg;
+$topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
