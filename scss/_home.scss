@@ -13,13 +13,13 @@
 
       .title {
         color: #000;
+        font-family: "Museo";
         &:hover {
           color: lighten(#000, 40%);
         }
       }
 
       .content {
-        font-weight: 300;
         font-size: rem-calc(16);
         color: #000;
       }

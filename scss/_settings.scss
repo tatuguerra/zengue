@@ -41,7 +41,7 @@
 // We use these to control various global styles
 $body-bg: #fff;
 //$body-font-color: #FFF;
-$body-font-family: "Museo", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -118,7 +118,7 @@ $primary-color: #d9233d;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "Museo";
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1193,7 +1193,7 @@ $topbar-link-color: #fff;
 $topbar-link-color-hover: $primary-color;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: $main-color;
-$topbar-link-weight: 300;
+$topbar-link-weight: 400;
 $topbar-link-font-size: rem-calc(15);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
