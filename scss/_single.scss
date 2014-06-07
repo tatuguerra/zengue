@@ -13,4 +13,38 @@
       font-size: rem-calc(16);
     }
   }
+
+  .comments {
+    border-top: 1px dotted #aaa;
+    padding-top: 20px;
+
+    .respond {
+      border: 1px solid #ccc;
+      background: #eee;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+
+      #reply-title {
+        font-size: rem-calc(18);
+      }
+      .comment-notes {
+        font-size: rem-calc(16);
+        font-weight: 300;
+        color: $primary-color;
+      }
+      .form-allowed-tags {
+        font-weight: 300;
+        code {
+          font-size: rem-calc(14);
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .widget {
+    ul {
+
+    }
+  }
 }

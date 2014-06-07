@@ -3,7 +3,7 @@
 {% block content %}
 <div id="single">
   <div class="row">
-    <article class="post-type-{{post.post_type}} large-8 columns" id="post-{{post.ID}}">
+    <article class="post-type-{{post.post_type}} large-9 columns" id="post-{{post.ID}}">
       <section class="article-content">
         <h2 class="article-h2">{{post.title}}</h2>
 
@@ -15,22 +15,22 @@
 	  {{post.content}}
         </div>
       </section>
-      <section class="comments">
-        <div class="respond">
-	  <h3 class="h2">Comments</h3>
-	  {{ comment_form }}
-        </div>
+      <section class="comments hide">
         <div class="responses">
-
 	  {% for cmt in post.get_comments() %}
 	  {% include "comment.twig" with {comment:cmt} %}
 	  {% endfor %}
         </div>
-
+        <div class="respond">
+	  <h3 class="h2">Comentários</h3>
+          <div class="hide">
+	    {{ comment_form }}
+          </div>
+        </div>
       </section>
 
     </article>
-    <aside class="large-4 columns">
+    <aside class="large-3 columns">
       {{widgets}}
     </aside>
   </div> <!-- /content-wrapper -->
