@@ -118,7 +118,7 @@ $primary-color: #b12029;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-$header-font-family: "Museo";
+// $header-font-family: "Museo";
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1168,8 +1168,8 @@ $orbit-nav-arrow-color-hover: darken($primary-color, 10%);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: darken($primary-color, 3);
-$topbar-bg: $topbar-bg-color;
+//$topbar-bg-color: #000;
+$topbar-bg: none;
 
 // Height and margin
 $topbar-height: 100px;
@@ -1189,15 +1189,15 @@ $topbar-title-font-size: rem-calc(50);
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #fff;
-$topbar-link-color-hover: darken($primary-color, 60);
-$topbar-link-color-active: darken($primary-color, 60);
+$topbar-link-color: #000;
+$topbar-link-color-hover: $primary-color;
+$topbar-link-color-active: $primary-color;
 $topbar-link-color-active-hover: $topbar-bg;
 $topbar-link-weight: 400;
 $topbar-link-font-size: rem-calc(15);
 $topbar-link-hover-lightness: 0%; // Darken by 10%
-$topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: $topbar-bg;
+$topbar-link-bg: image-url("topbar.png") -500px 0;
+$topbar-link-bg-hover: image-url("topbar.png") -500px 0;
 $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;

@@ -36,25 +36,28 @@
         </aside>
 
         <header id="header">
-          <div class="sticky">
+          <div class="contain-to-grid fixed">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
                 <li class="name">
                   <a class="hdr-logo-link" href="/" title="Timber" rel="home">
-                    <h1 class="title">vermelho<div class="red">vivo</div></h1>
+                    <h1 class="title">vermelho vivo</h1>
                   </a>
                 </li>
                 <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                <li class="toggle-topbar menu-icon">
+                  <a href="#"><span>Menu</span></a>
+                </li>
               </ul>
+
               <section class="top-bar-section">
                 <!-- Right Nav Section -->
                 <ul class="right">
-                  <li><a href="/">inicio</a></li>
-                  <li><a href="#" class="">notícias</a></li>
-                  <li><a href="#" class="left-off-canvas-toggle blah">colunistas</a></li>
-                  <li><a href="/videos">vídeos</a></li>
-                  <li><a href="/sobre">sobre</a></li>
+                  {% for item in menu.items %}
+                  <li id="menu-item-{{item.ID}}" class="{{item.classes | join(' ')}} menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                    <a href="{{item.link}}">{{item.title}}</a>
+                  </li>
+                  {% endfor %}
                 </ul>
               </section>
             </nav><!-- #access -->

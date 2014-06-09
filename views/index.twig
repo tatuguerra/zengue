@@ -12,17 +12,10 @@
 
             <h2 class="title">{{destaque.title}}</h2>
             <div class="content">
-              {{destaque.content | excerpt(30)}}
+              <p class="preview">{{destaque.get_preview(140,true,'[+]') }}</p>
             </div>
+          </div>
         </a>
-        <div class="meta">
-          <div class="date">
-            <div class="day">{{destaque.post_date | date("d")}}</div>
-            <div class="month">{{destaque.post_date | date("M")}}</div>
-          </div>
-          por <a href="{{destaque.get_author.get_link}}">{{destaque.author}}</a>
-        </div>
-          </div>
       </div>
     </div>
     {% endfor %}
@@ -32,24 +25,23 @@
         <li>
           <div class="post olders">
             <a href="{{destaque.permalink}}">
+              {% if destaque.thumbnail.src %}
               <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
               <div class="post-content">
                 <h3 class="title">{{destaque.title}}</h3>
+              </div>
+              {% else %}
+              <div class="post-content noimg">
+                <h3 class="title-only">{{destaque.title}}</h3>
+                <a href="{{destaque.permalink}}" class="more">ver mais</a>
+              </div>
+              {% endif %}
             </a>
-            <div class="meta">
-              <div class="date">
-                <div class="day">{{destaque.post_date | date("d")}}</div>
-                <div class="month">{{destaque.post_date | date("M")}}</div>
-              </div>
-              por <a href="{{destaque.get_author.get_link}}">{{destaque.author}}</a>
-            </div>
-              </div>
-          </div>
         </li>
         {% endfor %}
       </ul>
+          </div>
     </div>
-  </div>
 </section>
 
 <section id="videos">
@@ -101,12 +93,12 @@
         <ul class="example-orbit" data-orbit>
           <li class="tweet">
             <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
+              elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
             <a href="#" class="author right">@loremipsum</a>
           </li>
           <li class="tweet">
             <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
+              elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
             <a href="#" class="author right">@loremipsum</a>
           </li>
         </ul>
@@ -118,7 +110,7 @@
         <ul class="links-list">
           <li class="link">
             <a href="#">
-              <i class="fa fa-twitter-square"></i> seguir</a>
+              <i class="fa fa-twitter-square"></i>  seguir</a>
           </li>
           <li class="link">
             <a href="#">
