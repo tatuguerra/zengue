@@ -10,7 +10,7 @@
       margin: 0;
     }
     .blog-author {
-      font-size: rem-calc(16);
+      font-size: rem-calc(18);
     }
   }
 
@@ -28,7 +28,7 @@
         font-size: rem-calc(18);
       }
       .comment-notes {
-        font-size: rem-calc(16);
+        font-size: rem-calc(12);
         font-weight: 300;
         color: $primary-color;
       }
@@ -43,8 +43,30 @@
   }
 
   .widget {
+
+    h4{
+      font-size:rem-calc(21);
+      padding-top: 2em;
+    }
+    a{
+      color: lighten(#000, 20%);
+    }
     ul {
+      list-style: none;
+    }
+    li {
+      padding-left: 0;
 
     }
+    li:before {
+      content: '';
+      color: $primary-color;
+      font-family: "FontAwesome";
+      font-size:rem-calc(10);
+      display: inline-block;
+      margin-left: -1.6em;
+      width: 1.8em;
+    }
+
+   }
   }
-}
