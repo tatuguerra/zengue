@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section id="archive">
+  <div class="row">
+    <div class="large-12 columns">
+      <ul class="small-block-grid-4">
+        {% for destaque in posts %}
+        <li>
+          <div class="post olders">
+            <a href="{{destaque.permalink}}">
+              {% if destaque.thumbnail.src %}
+              <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
+              <div class="post-content">
+                <h3 class="title">{{destaque.title}}</h3>
+              </div>
+              {% else %}
+              <div class="post-content noimg">
+                <h3 class="title-only">{{destaque.title}}</h3>
+                <a href="{{destaque.permalink}}" class="more">ver mais</a>
+              </div>
+              {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+      </ul>
+          </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

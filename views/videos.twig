@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+{% block content %}
+<section id="videos">
+  {% for video in videos %}
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="small-block-grid-4">
+        <div class="flex-video">
+          {{video.get_field('link_video')}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}
