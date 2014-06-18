@@ -33,8 +33,23 @@ function load_scripts(){
     wp_enqueue_script('jquery');
 }
 
-function arphabet_widgets_init() {
+add_action( 'init', 'create_posttype' );
+function create_posttype() {
+    register_post_type( 'videos',
+                       array(
+    'labels' => array(
+    'name' => __( 'Videos' ),
+                      'singular_name' => __( 'Video' )
+),
+'public' => true,
+'menu_icon' => 'dashicons-video-alt',
+'has_archive' => true,
+'rewrite' => array('slug' => 'videos'),
+)
+);
+}
 
+function arphabet_widgets_init() {
     register_sidebar( array(
     'name' => 'Sidebar',
     'id' => 'sidebar',
@@ -43,7 +58,6 @@ function arphabet_widgets_init() {
     'before_title' => '<h4>',
     'after_title' => '</h4>',
 ) );
-
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 

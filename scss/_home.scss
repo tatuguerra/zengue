@@ -1,4 +1,8 @@
-#destaques {
+.section-title {
+  font-family: "Museo";
+}
+
+#destaques, #archive {
   padding: 20px 0;
   background: image-url("bg.png") #fff fixed;
 
@@ -27,6 +31,13 @@
             color: lighten(#000, 40%);
             font-size: rem-calc(19);
             font-weight: 300;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+          .read-more {
+            color: $primary-color;
+            font-size: rem-calc(16);
           }
         }
       }
@@ -88,9 +99,8 @@
 }
 
 #videos {
-  background: image-url("bg.png");
+  background: image-url("bg.png") #000;
   padding: 30px 0;
-
 }
 
 #social {
@@ -105,7 +115,7 @@
       margin: 0;
       .news {
         list-style: none;
-
+        margin-right: 40px;
         .title {
           font-size: rem-calc(15);
 
@@ -155,6 +165,7 @@
       position: relative;
       .link {
         list-style: none;
+
         a {
           font-size: rem-calc(20);
           .fa {

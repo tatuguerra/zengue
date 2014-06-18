@@ -12,7 +12,7 @@
 
             <h2 class="title">{{destaque.title}}</h2>
             <div class="content">
-              <p class="preview">{{destaque.get_preview(140,true,'[+]') }}</p>
+              <p class="preview">{{destaque.get_preview(140,true,'[continuar lendo]') }}</p>
             </div>
           </div>
         </a>
@@ -51,18 +51,21 @@
     </div>
   </div>
   <div class="row">
-    <div class="large-4 columns">
-      {% for video in videos %}
-      <div class="flex-video">
-        {{video.get_field('link_video')}}
-      </div>
-      {% endfor %}
+    <div class="large-12 columns">
+      <ul class="small-block-grid-3">
+        {% for video in videos %}
+        <li>
+          <div class="flex-video">
+            {{video.get_field('link_video')}}
+          </div>
+        </li>
+        {% endfor %}
     </div>
-
   </div>
+
   <div class="row">
     <div class="large-2 large-offset-10 columns text-right">
-      <a href="#">ver todos</a>
+      <a href="/videos">ver todos</a>
     </div>
   </div>
 </section>
@@ -110,7 +113,7 @@
         <ul class="links-list">
           <li class="link">
             <a href="#">
-              <i class="fa fa-twitter-square"></i>  seguir</a>
+              <i class="fa fa-twitter-square"></i> seguir</a>
           </li>
           <li class="link">
             <a href="#">
