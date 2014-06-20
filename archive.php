@@ -36,5 +36,6 @@
 		}
 
 		$data['posts'] = Timber::get_posts();
-
+                $blog_args = 'post_type=colunistas';
+                $data['colunistas'] = Timber::get_posts($blog_args);
 		Timber::render($templates, $data);

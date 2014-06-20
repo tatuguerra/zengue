@@ -47,6 +47,19 @@ function create_posttype() {
 'rewrite' => array('slug' => 'videos'),
 )
 );
+    register_post_type( 'colunistas',
+                       array(
+    'labels' => array(
+    'name' => __( 'Colunistas' ),
+                      'singular_name' => __( 'Colunista' )
+),
+'public' => true,
+'menu_icon' => 'dashicons-groups',
+'has_archive' => true,
+'rewrite' => array('slug' => 'colunistas'),
+));
+
+
 }
 
 function arphabet_widgets_init() {

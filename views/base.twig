@@ -16,7 +16,10 @@
     <script src="{{site.theme.link}}/bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
+
     <div class="off-canvas-wrap" data-offcanvas>
+
+
       <div class="inner-wrap">
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
@@ -25,45 +28,46 @@
                 Colunistas <i class="fa fa-times right"></i>
               </label>
             </li>
-
+            {% for colunista in colunistas%}
             <li>
-              <a href="#">
-                <img src="http://profile.ak.fbcdn.net/hprofile-ak-frc3/t1.0-1/p50x50/1016966_10200686019286311_930941555_t.jpg"> @guerrinha {{author.name}}
+              <a href="{{colunista.get_field('blog_url')}}">
+                <img src="{{TimberImage(colunista.get_field('avatar')).src|resize(50, 50)}}"> {{colunista.title}}
               </a>
             </li>
-
+            {% endfor %}
           </ul>
         </aside>
 
         <header id="header">
-          <div class="contain-to-grid fixed">
-            <nav class="top-bar" data-topbar>
-              <ul class="title-area">
-                <li class="name">
-                  <a class="hdr-logo-link" href="/" title="Timber" rel="home">
-                    <h1 class="title">vermelho vivo</h1>
-                  </a>
-                </li>
-                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                <li class="toggle-topbar menu-icon">
-                  <a href="#"><span>Menu</span></a>
-                </li>
-              </ul>
-
-              <section class="top-bar-section">
-                <!-- Right Nav Section -->
-                <ul class="right">
-                  {% for item in menu.items %}
-                  <li id="menu-item-{{item.ID}}" class="{{item.classes | join(' ')}} menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-                    <a href="{{item.link}}">{{item.title}}</a>
+            <div class="contain-to-grid fixed">
+              <nav class="top-bar" data-topbar>
+                <ul class="title-area">
+                  <li class="name">
+                    <a class="hdr-logo-link" href="/" title="Timber" rel="home">
+                      <h1 class="title">vermelho vivo</h1>
+                    </a>
                   </li>
-                  {% endfor %}
+                  <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                  <li class="toggle-topbar menu-icon">
+                    <a href="#"><span>Menu</span></a>
+                  </li>
                 </ul>
-              </section>
-            </nav><!-- #access -->
-          </div>
+
+                <section class="top-bar-section">
+                  <!-- Right Nav Section -->
+                  <ul class="right">
+                    {% for item in menu.items %}
+                    <li id="menu-item-{{item.ID}}" class="{{item.classes | join(' ')}} menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                      <a href="{{item.link}}">{{item.title}}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </section>
+              </nav><!-- #access -->
+            </div>
         </header>
 
+        <a class="exit-off-canvas" href="#"></a>
         {% block content %}
 
         {% endblock %}
@@ -72,7 +76,7 @@
           {% include 'footer.twig' %}
         </footer>
         {{ function('wp_footer') }}
-        <a class="exit-off-canvas"></a>
+
       </div>
     </div>
     <script src="{{site.theme.link}}/bower_components/jquery/dist/jquery.min.js"></script>
