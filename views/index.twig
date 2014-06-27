@@ -12,7 +12,7 @@
 
             <h2 class="title">{{destaque.title}}</h2>
             <div class="content">
-              <p class="preview">{{destaque.get_preview(140,true,'[continuar lendo]') }}</p>
+              <p class="preview">{{destaque.get_preview(40,true,'[continuar lendo]') }}</p>
             </div>
           </div>
         </a>
@@ -53,7 +53,7 @@
   <div class="row">
     <div class="large-12 columns">
       <ul class="small-block-grid-3">
-        {% for video in videos %}
+        {% for video in videos | slice(0,3) %}
         <li>
           <div class="flex-video">
             {{video.get_field('link_video')}}
@@ -92,18 +92,10 @@
     </div>
 
     <div class="large-5 columns" data-equalizer-watch>
+
       <div class="tweets" data-equalizer-watch>
         <ul class="example-orbit" data-orbit>
-          <li class="tweet">
-            <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing
-              elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
-            <a href="#" class="author right">@loremipsum</a>
-          </li>
-          <li class="tweet">
-            <p class="content">Lorem ipsum dolor sit amet, consectetuer adipiscing
-              elit. Donec hendrerit tempor tellus. Donec pretium posuere</p>
-            <a href="#" class="author right">@loremipsum</a>
-          </li>
+          {{widgets}}
         </ul>
         <a href="#" class="hashtag">#vermelho<span class="red">vivo</span></a>
       </div>

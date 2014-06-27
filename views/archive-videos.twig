@@ -1,9 +1,0 @@
-{% extends "base.twig" %}
-
-{% block content %}
-      {% for video in videos %}
-      <div class="flex-video">
-        {{video.get_field('link_video')}}
-      </div>
-      {% endfor %}
-{% endblock %}
