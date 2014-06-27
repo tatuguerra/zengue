@@ -16,6 +16,15 @@
   color: $primary-color;
 }
 
+.f-topbar-fixed {
+  padding-top: 0 !important;
+}
+
+.exit-off-canvas {
+    display: block;
+    padding-bottom: 100px;
+}
+
 #footer {
   background: #191b1b;
   color: white;
