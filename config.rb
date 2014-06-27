@@ -10,7 +10,7 @@ images_dir = "images"
 javascripts_dir = "js"
 font_dir = "../fonts"
 
-output_style = :expanded
+output_style = :compressed
 environment = :development
 
 # You can select your preferred output style here (can be overridden via the command line):
