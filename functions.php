@@ -70,8 +70,17 @@ function arphabet_widgets_init() {
     'after_widget' => '</div>',
     'before_title' => '<h4>',
     'after_title' => '</h4>',
-) );
+));
+    register_sidebar( array(
+    'name' => 'Footer',
+    'id' => 'footer',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
+));
 }
+
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 Timber::add_route('noticias', function($params){
