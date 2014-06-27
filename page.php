@@ -22,6 +22,9 @@
  */
 
 $context = Timber::get_context();
+$blog_args = 'post_type=colunistas';
+$context['colunistas'] = Timber::get_posts($blog_args);
 $post = new TimberPost();
 $context['post'] = $post;
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
