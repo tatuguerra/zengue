@@ -20,6 +20,7 @@
 	$context['posts'] = Timber::get_posts();
         $args = 'category_name=destaques';
 	$context['destaques'] = Timber::get_posts($args);
+        $context['estrutura'] = get_theme_mods();
 
         $movie_args = 'post_type=videos';
 	$context['videos'] = Timber::get_posts($movie_args);

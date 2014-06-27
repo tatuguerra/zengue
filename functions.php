@@ -92,3 +92,22 @@ Timber::add_route('videos', function($params){
     $query = 'Timber::get_context();';
     Timber::load_template('videos.php', $query);
 });
+
+function Vermelhovivo_customize_register( $wp_customize ) {
+$wp_customize->add_setting('destaques_position', array());
+$wp_customize->add_control('destaques_position', array(
+  'label'      => __('Disposição destaques', 'Vermelhovivo'),
+  'section'    => 'layout',
+  'settings'   => 'destaques_position',
+  'type'       => 'radio',
+  'choices'    => array(
+    'grade'   => 'Grade',
+    'linha'  => 'Linha',
+  ),
+));
+$wp_customize->add_section('layout' , array(
+    'title' => __('Destaques','Vermelhovivo'),
+));
+
+}
+add_action( 'customize_register', 'Vermelhovivo_customize_register' );
