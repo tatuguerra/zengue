@@ -1,0 +1,148 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section id="destaques">
+  <div class="row">
+    {% if estrutura.destaques_position == 'grade' %}
+    {% for destaque in destaques | slice(0, 1) %}
+    <div class="large-6 columns">
+      <div class="post main">
+        <a href="{{destaque.permalink}}">
+          <img src="{{destaque.thumbnail.src}}" class="">
+          <div class="post-content">
+
+            <h2 class="title">{{destaque.title}}</h2>
+            <div class="content">
+              <p class="preview">{{destaque.get_preview(40,true,'[continuar lendo]') }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="large-6 columns">
+      <ul class="small-block-grid-2">
+        {% for destaque in destaques | slice(1, 4) %}
+        <li>
+          <div class="post olders">
+            <a href="{{destaque.permalink}}">
+              {% if destaque.thumbnail.src %}
+              <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
+              <div class="post-content">
+                <h3 class="title">{{destaque.title}}</h3>
+              </div>
+              {% else %}
+              <div class="post-content noimg">
+                <h3 class="title-only">{{destaque.title}}</h3>
+                <a href="{{destaque.permalink}}" class="more">ver mais</a>
+              </div>
+              {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+      </ul>
+          </div>
+          {% else %}
+          <div class="large-12 columns">
+            <ul class="small-block-grid-4">
+              {% for destaque in destaques [:4] %}
+              <li>
+                <div class="post olders">
+                  <a href="{{destaque.permalink}}">
+                    {% if destaque.thumbnail.src %}
+                    <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
+                    <div class="post-content">
+                      <h3 class="title">{{destaque.title}}</h3>
+                    </div>
+                    {% else %}
+                    <div class="post-content noimg">
+                      <h3 class="title-only">{{destaque.title}}</h3>
+                      <a href="{{destaque.permalink}}" class="more">ver mais</a>
+                    </div>
+                    {% endif %}
+                  </a>
+              </li>
+              {% endfor %}
+            </ul>
+                </div>
+    {% endif %}
+          </div>
+</section>
+
+<section id="videos">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="section-title">Videos</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <ul class="small-block-grid-3">
+        {% for video in videos | slice(0,3) %}
+        <li>
+          <div class="flex-video">
+            {{video.get_field('link_video')}}
+          </div>
+        </li>
+        {% endfor %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-2 large-offset-10 columns text-right">
+      <a href="/videos">ver todos</a>
+    </div>
+  </div>
+</section>
+
+<section id="social">
+  <div class="row">
+    <div class="large-12 columns">
+      <h2 class="section-title">Últimas notícias</h2>
+    </div>
+  </div>
+  <div class="row" data-equalizer>
+    <div class="large-5 columns" data-equalizer-watch>
+      <div class="last-news">
+        <ul class="list-last-news">
+          {% for noticia in posts %}
+          <li class="news">
+            <a href="{{noticia.link}}">
+              <h3 class="title {{ cycle(['even','odd'],loop.index) }}">{{noticia.title}}</h3>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="large-5 columns" data-equalizer-watch>
+
+      <div class="tweets" data-equalizer-watch>
+        <ul class="example-orbit" data-orbit>
+          {{widgets}}
+        </ul>
+        <a href="#" class="hashtag">#vermelho<span class="red">vivo</span></a>
+      </div>
+    </div>
+    <div class="large-2 columns" data-equalizer-watch>
+      <div class="social-links" data-equalizer-watch>
+        <ul class="links-list">
+          <li class="link">
+            <a href="#">
+              <i class="fa fa-twitter-square"></i> seguir</a>
+          </li>
+          <li class="link">
+            <a href="#">
+              <i class="fa fa-facebook-square"></i> curtir</a>
+          </li>
+          <li class="link">
+            <a href="#">
+              <i class="fa fa-youtube"></i> assistir</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

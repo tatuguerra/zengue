@@ -1,0 +1,29 @@
+<header>
+  <div class="sticky">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name"><h5><a href="#">Zengue</a></h5></li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          {% for item in menu.get_items %}
+          <li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a>
+            {% if item.get_children %}
+            <li class="{{item.classes | join(' ')}} has-dropdown"><a href="{{item.get_link}}">{{item.title}}</a>
+            <ul class="dropdown">
+              {% for child in item.get_children %}
+              <li class="active"><a href="{{child.get_link}}">{{child.title}}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </nav>
+  </div>
+</header>

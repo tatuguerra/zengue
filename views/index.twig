@@ -1,147 +1,343 @@
-{% extends "base.twig" %}
+{% extends "base-index.twig" %}
 
 {% block content %}
-<section id="destaques">
-  <div class="row">
-    {% if estrutura.destaques_position == 'grade' %}
-    {% for destaque in destaques | slice(0, 1) %}
-    <div class="large-6 columns">
-      <div class="post main">
-        <a href="{{destaque.permalink}}">
-          <img src="{{destaque.thumbnail.src}}" class="">
-          <div class="post-content">
 
-            <h2 class="title">{{destaque.title}}</h2>
-            <div class="content">
-              <p class="preview">{{destaque.get_preview(40,true,'[continuar lendo]') }}</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    {% endfor %}
-    <div class="large-6 columns">
-      <ul class="small-block-grid-2">
-        {% for destaque in destaques | slice(1, 4) %}
-        <li>
-          <div class="post olders">
-            <a href="{{destaque.permalink}}">
-              {% if destaque.thumbnail.src %}
-              <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
-              <div class="post-content">
-                <h3 class="title">{{destaque.title}}</h3>
-              </div>
-              {% else %}
-              <div class="post-content noimg">
-                <h3 class="title-only">{{destaque.title}}</h3>
-                <a href="{{destaque.permalink}}" class="more">ver mais</a>
-              </div>
-              {% endif %}
-            </a>
+<header>
+  <div class="sticky">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">ZENGUE</a></h1>
+          <a href="#"><img src="img/zengueBlanco.png" alt=""height="auto" width="130"></a>
         </li>
-        {% endfor %}
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
-          </div>
-          {% else %}
-          <div class="large-12 columns">
-            <ul class="small-block-grid-4">
-              {% for destaque in destaques [:4] %}
-              <li>
-                <div class="post olders">
-                  <a href="{{destaque.permalink}}">
-                    {% if destaque.thumbnail.src %}
-                    <img src="{{destaque.thumbnail.src}}" class="" alt="Thumbnail para {{destaque.title}}">
-                    <div class="post-content">
-                      <h3 class="title">{{destaque.title}}</h3>
-                    </div>
-                    {% else %}
-                    <div class="post-content noimg">
-                      <h3 class="title-only">{{destaque.title}}</h3>
-                      <a href="{{destaque.permalink}}" class="more">ver mais</a>
-                    </div>
-                    {% endif %}
-                  </a>
-              </li>
-              {% endfor %}
-            </ul>
-                </div>
-    {% endif %}
-          </div>
-</section>
 
-<section id="videos">
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul id="top-menu-bts" class="right">
+          <li class="active"><a href="#">HOME</a></li>
+          <li class="active"><a href="#sobre">SOBRE</a></li>
+          <li class="active"><a href="#productos">PIEZAS</a></li>
+          <li class="active"><a href="#donde">DONDE</a></li>
+          <li class="active"><a href="#portofolio">PORTOFOLIO</a></li>
+          <li class="active"><a href="#blog">BLOG(?)</a></li>
+          <li class="active"><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</header>
+
+<section id="home">
+  <div class="bg-header">
+    <!--Tentarei resover assim http://codex.wordpress.org/Custom_Backgrounds-->
+    <img src="{{site.theme.link}}/images/BGindex01.jpg" alt="" class="">
+  </div>
+
   <div class="row">
-    <div class="large-12 columns">
-      <h2 class="section-title">Videos</h2>
+    <div class="small-12 columns">
+
+      <img src="{{site.theme.link}}/images/logoZengueVert.png" alt="" class="bg-radius">
+
+
     </div>
   </div>
   <div class="row">
-    <div class="large-12 columns">
-      <ul class="small-block-grid-3">
-        {% for video in videos | slice(0,3) %}
+    <div class="small-12 medium-4 small-centered columns">
+      <ul class="small-block-grid-4 contato bg-radius" ><!-- href doesn't work for other than www or mail (check other forms) -->
         <li>
-          <div class="flex-video">
-            {{video.get_field('link_video')}}
-          </div>
+          <a data-contact="Contactame" href="#contacto">
+            <i class="fa fa-envelope fa-lg"></i> </br>
+          </a>
         </li>
-        {% endfor %}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="large-2 large-offset-10 columns text-right">
-      <a href="/videos">ver todos</a>
+        <li>
+          <a data-pinterest="Pinterest" href="pinteres">
+            <i class="fa fa-pinterest fa-lg"></i> </br>
+          </a>
+        </li>
+        <li>
+          <a data-googleplus="Zengue" href="zengue.google">
+            <i class="fa fa-google-plus fa-lg"></i> </br>
+          </a>
+        </li>
+        <li>
+          <a data-facebook="Facebook" href="http://www.facebook.com">
+            <i class="fa fa-facebook fa-lg"></i> </br>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="social">
+<!--sobre-->
+<section id="sobre">
   <div class="row">
-    <div class="large-12 columns">
-      <h2 class="section-title">Últimas notícias</h2>
+    <div class="small-12 columns">
+      <h2>SOBRE</h2>
+      <div class="row fotos-sobre">
+        <div class="small-8 small-centered columns">
+          <ul class="small-block-grid-1 medium-block-grid-3">
+            <li class="show-for-medium-up"><img src="{{site.theme.link}}/images/zengue-foto.png" alt="foto zengue"></li>
+            <li><img src="{{site.theme.link}}/images/zengue-foto.png" alt="foto zengue"></li>
+            <li class="show-for-medium-up"><img src="{{site.theme.link}}/images/zengue-foto.png" alt="foto zengue"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-centered columns text-sobre">
+          <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Proin at nunc ut est iaculis maximus a vitae ligula.
+            Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
+            Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
+            eget vehicula dui nunc vitae risus.
+          </p>
+          <p class="center">Donec sem ipsum,convallis sed tempus at, egestas blandit velit.
+            Proin ornare vel nisi non volutpat. Pellentesque mattis mi justo,
+            id interdum eros luctus non. Ut maximus sagittis nulla,
+            et elementum mi porttitor id. Etiam pretium justo aliquam lectus
+            convallis pellentesque. Donec quis erat neque. Vestibulum eu tortor
+            ac elit venenatis congue.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row" data-equalizer>
-    <div class="large-5 columns" data-equalizer-watch>
-      <div class="last-news">
-        <ul class="list-last-news">
-          {% for noticia in posts %}
-          <li class="news">
-            <a href="{{noticia.link}}">
-              <h3 class="title {{ cycle(['even','odd'],loop.index) }}">{{noticia.title}}</h3>
-            </a>
+</section>
+
+<!--Producto-->
+<section id="productos">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>PRODUCTOS</h2>
+      <div class="row">
+        <div class="medium-8 medium-centered columns hide-for-small-only">
+          <ul class="small-block-grid-1 medium-block-grid-5 menu">
+            <li><a href="#" class="button small expand radius">todos</a></li>
+            <li><a href="#" class="button small expand radius">anillos</a></li>
+            <li><a href="#" class="button small expand radius">collares</a></li>
+            <li><a href="#" class="button small expand radius">pulseras</a></li>
+            <li><a href="#" class="button small expand radius">pendientes</a></li>
+          </ul>
+        </div>
+        <div class="medium-8 medium-centered columns show-for-small-only">
+          <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown small expand radius">Selecciona</button><br>
+          <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+            <li><a href="#">todos</a></li>
+            <li><a href="#">anillos</a></li>
+            <li><a href="#">collares</a></li>
+            <li><a href="#">pulseras</a></li>
+            <li><a href="#">pendientes</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-12 small-centered columns">
+        <ul class="medium-block-grid-4 productos">
+          <li>
+            <div><img src="img/anel1.jpg" alt=""></div>
           </li>
-          {% endfor %}
+          <li>
+            <div><img src="img/anel2.jpg" alt=""></div>
+          </li>
+          <li>
+            <div><img src="img/pingente1.jpg" alt=""></div>
+          </li>
+          <li>
+            <div><img src="img/pingente2.jpg" alt=""></div>
+          </li>
+          <li>
+            <div><img src="img/pulseira1.jpg" alt=""></div>
+          </li>
+          <li>
+            <div><img src="img/pulseira2.jpg" alt=""></div>
+          </li>
+          <li>
+            <div><img src="img/broche.jpg" alt=""></div>
+          </li>
+          <li>
+            <div><img src="img/pingente3.jpg" alt=""></div>
+          </li>
         </ul>
+        <a href="#">ver mas trabajos</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--Donde-->
+<section id="donde"><!-- possivel solução para criar o menu para o gmaps: usar data-long e data-lat nas tags do html. usar jquery para escutar o click na loja e setar uma variavel para [long,lat]. usar esta variavel para centralizar o gmapsu-->
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>DONDE</h2>
+      <div class="row">
+        <div class="small-3 columns">
+          <ul id="marker_list">
+            <!-- gerado por JavaScript-->
+          </ul>
+        </div>
+        <div class="small-9 columns">
+          <div id="map_canvas"></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="large-5 columns" data-equalizer-watch>
-
-      <div class="tweets" data-equalizer-watch>
-        <ul class="example-orbit" data-orbit>
-          {{widgets}}
-        </ul>
-        <a href="#" class="hashtag">#vermelho<span class="red">vivo</span></a>
-      </div>
+<!--Portfolio-->
+<section id="portofolio">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>PORTOFOLIO</h2>
+      <ul class="medium-block-grid-4 portafolio">
+        <li>
+          <div><img src="img/anel2.jpg" alt=""></div>
+        </li>
+        <li>
+          <div><img src="img/pingente1.jpg" alt=""></div>
+        </li>
+        <li>
+          <div><img src="img/pingente2.jpg" alt=""></div>
+        </li>
+        <li>
+          <div><img src="img/pulseira1.jpg" alt=""></div>
+        </li>
+      </ul>
     </div>
-    <div class="large-2 columns" data-equalizer-watch>
-      <div class="social-links" data-equalizer-watch>
-        <ul class="links-list">
-          <li class="link">
-            <a href="#">
-              <i class="fa fa-twitter-square"></i> seguir</a>
-          </li>
-          <li class="link">
-            <a href="#">
-              <i class="fa fa-facebook-square"></i> curtir</a>
-          </li>
-          <li class="link">
-            <a href="#">
-              <i class="fa fa-youtube"></i> assistir</a>
-          </li>
-        </ul>
+  </div>
+</section>
+
+<!--Blog-->
+<section id="blog">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>BLOG</h2>
+      <ul class="medium-block-grid-2">
+        <li>
+          <hr>
+          <ul class="medium-block-grid-2">
+            <li><img src="img/pingente1.jpg" alt="">
+            </li>
+            <li>
+              <h3>Lorem Ipsum Dolor</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Proin at nunc ut est iaculis maximus a vitae ligula.
+                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
+                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
+                eget vehicula dui nunc vitae risus.(...)
+              </p>
+            </li>
+          </ul>
+          <hr>
+        </li>
+        <li>
+          <hr>
+          <ul class="medium-block-grid-1">
+            <li>
+              <h3>Lorem Ipsum Dolor</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Proin at nunc ut est iaculis maximus a vitae ligula.
+                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
+                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
+                eget vehicula dui nunc vitae risus.(...)
+              </p>
+            </li>
+          </ul>
+          <hr>
+        </li>
+        <li>
+          <hr>
+          <ul class="medium-block-grid-1">
+            <li>
+              <h3>Lorem Ipsum Dolor</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Proin at nunc ut est iaculis maximus a vitae ligula.
+                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
+                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
+                eget vehicula dui nunc vitae risus.(...)
+              </p>
+            </li>
+          </ul>
+          <hr>
+        </li>
+        <li>
+          <hr>
+          <ul class="medium-block-grid-2">
+            <li><img src="img/pingente1.jpg" alt=""></li>
+            <li>
+              <h3>Lorem Ipsum Dolor</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Proin at nunc ut est iaculis maximus a vitae ligula.
+                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
+                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
+                eget vehicula dui nunc vitae risus.(...)
+              </p>
+            </li>
+          </ul>
+          <hr>
+        </li>
+      </ul>
+      <a href="">leer blog</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>CONTACTO</h2>
+
+      <div class="row">
+        <div class="small-12 medium-8 small-centered columns">
+          <ul class="dados small-block-grid-2" ><!-- href doesn't work for other than www or mail (check other forms) -->
+            <li>
+              <a href="tel:+1800229933">
+                <i class="fa fa-map-marker fa-2x"></i> </br>
+              </a>
+              <p class"txt-info">C/ Vallfogona,x<br>Grácia - Barcelona<br>08XXX</p>
+            </li>
+            <li>
+              <a href="tel:+1800229933">
+                <i class="fa fa-mobile-phone fa-2x"></i> </br>
+              </a>
+              <p class"txt-info">+1800229933</p>
+            </li>
+          </ul>
+        </div>
       </div>
+
+      <form>
+        <div class="row">
+          <div class="small-12 medium-8 small-centered columns">
+            <label>
+              <input type="text" placeholder="Nombre" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-8 small-centered columns">
+            <label>
+              <input type="text" placeholder="E-mail" />
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="small-12 medium-8 small-centered columns">
+            <label>
+              <textarea placeholder="Mensage"></textarea>
+            </label>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="small-12 medium-8 small-centered columns">
+          <a href="#" class="">Enviar >></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

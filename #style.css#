@@ -1,0 +1,88 @@
+/* Syntax error: File to import not found or unreadable:
+foundation/functions.  Load paths:
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/bower_components/foundation/scss
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/bower_components/fontawesome/scss
+Compass::SpriteImporter
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets
+on line 13 of
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss/_settings.scss
+from line 11 of
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss/style.scss
+
+8: $fa-font-path: "bower_components/fontawesome/fonts";
+9: 
+10: @import "compass";
+11: @import "settings";
+12: @import "foundation";
+13: @import "font-awesome";
+14: @import "fonts";
+15: @import "base";
+16: @import "home";
+17: @import "single";
+18: @import "video";
+
+Backtrace:
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss/_settings.scss:13
+/Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss/style.scss:11
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/import_node.rb:45:in `import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:79:in `block in with_base'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:121:in `with_frame'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:79:in `with_base'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:297:in `map'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:88:in `block in with_import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:121:in `with_frame'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:88:in `with_import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:79:in `block in with_base'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:121:in `with_frame'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/stack.rb:79:in `with_base'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/tree/root_node.rb:20:in `render'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/engine.rb:274:in `render'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:484:in `update_stylesheet'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:214:in `block in update_stylesheets'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:208:in `each'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:208:in `update_stylesheets'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/sass-3.3.14/lib/sass/plugin/compiler.rb:291:in `watch'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/lib/compass/sass_compiler.rb:46:in `watch!'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/lib/compass/commands/watch_project.rb:41:in `perform'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/bin/compass:30:in `block in <top (required)>'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/bin/compass:44:in `call'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-1.0.1/bin/compass:44:in `<top (required)>'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/bin/compass:23:in `load'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/bin/compass:23:in `<main>'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/bin/ruby_executable_hooks:15:in `eval'
+/Users/tatuguerra/.rvm/gems/ruby-2.1.1/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: foundation/functions.\A               Load paths:\A                 /Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/bower_components/foundation/scss\A                 /Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/bower_components/fontawesome/scss\A                 Compass::SpriteImporter\A                 /Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss\A                 /Users/tatuguerra/.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets\A         on line 13 of /Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss/_settings.scss\A         from line 11 of /Users/tatuguerra/Documents/FrontEnd/Tools/VermelhoVivo/scss/style.scss\A \A 8: $fa-font-path: \"bower_components/fontawesome/fonts\";\A 9: \A 10: @import \"compass\";\A 11: @import \"settings\";\A 12: @import \"foundation\";\A 13: @import \"font-awesome\";\A 14: @import \"fonts\";\A 15: @import \"base\";\A 16: @import \"home\";\A 17: @import \"single\";\A 18: @import \"video\";"; }

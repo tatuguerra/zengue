@@ -1,0 +1,469 @@
+
+@import "compass/css3";
+
+@import "compass/utilities";
+
+
+
+//Base
+//Top bar
+//Section_Home
+//Section_Sobre
+//Section_Productos
+//Section_Donde
+//Section_Portafolio
+//Section_Blog
+
+
+
+//Base
+
+  //grid
+   $row-width: rem-calc(1100);
+  // $total-columns: 12;
+  // $column-gutter: rem-calc(30);
+
+  //colors
+   $primary-color: #addac6;
+   $secondary-color: #9e0829;
+
+   .menu a{color:$secondary-color;
+     :hover{color:$secondary-color;}
+     :active{color:$secondary-color;}
+   }
+
+  //radius
+  .bg-radius {
+  @include border-radius(6px);
+}
+
+  //text
+  .center{
+    text-align:center;
+  }
+
+  a{
+    color:$secondary-color;
+    :hover{color:$secondary-color;}
+    :active{color:$secondary-color;}
+  }
+
+  h2{
+    margin-bottom:6em;
+  }
+
+  //Sections
+  section{
+    padding-top:3rem;
+    padding-bottom:5rem;
+  }
+
+  //button
+
+  // 05. Buttons
+  // - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  // $include-html-button-classes: $include-html-classes;
+
+  // We use these to build padding for buttons.
+  // $button-tny: rem-calc(10);
+  // $button-sml: rem-calc(14);
+  // $button-med: rem-calc(16);
+  // $button-lrg: rem-calc(18);
+
+  // We use this to control the display property.
+  // $button-display: inline-block;
+  // $button-margin-bottom: rem-calc(20);
+
+  // We use these to control button text styles.
+  // $button-font-family: $body-font-family;
+  // $button-font-color: $white;
+ $button-font-color-alt: $secondary-color;
+  // $button-font-tny: rem-calc(11);
+  // $button-font-sml: rem-calc(13);
+  // $button-font-med: rem-calc(16);
+  // $button-font-lrg: rem-calc(20);
+  // $button-font-weight: $font-weight-normal;
+  // $button-font-align: center;
+
+  // We use these to control various hover effects.
+$button-function-factor: 0%;
+
+
+
+  // We use this to set the default radius used throughout the core.
+  // $button-radius: $global-radius;
+  // $button-round: $global-rounded;
+
+  // We use this to set default opacity and cursor for disabled buttons.
+  // $button-disabled-opacity: 0.7;
+  // $button-disabled-cursor: $cursor-default-value;
+
+  // We use these to control button border and hover styles.
+   $button-border-width: 2px;
+  // $button-border-style: solid;
+ $button-bg-color: transparent;
+ $button-bg-hover: scale-color(white, $lightness: $button-function-factor);
+ $button-border-color: $secondary-color;
+ $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
+
+ $secondary-button-border-color: $secondary-button-bg-hover;
+  // $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
+  //$success-button-border-color: $success-button-bg-hover;
+  // $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor);
+  // $alert-button-border-color: $alert-button-bg-hover;
+
+//Top bar
+
+
+// Background color for the top bar
+ $topbar-bg-color: scale-color($primary-color, $lightness: -20%);
+ $topbar-bg: $topbar-bg-color;
+
+
+// Height and margin
+ $topbar-height: 45px;
+// $topbar-margin-bottom: 0;
+
+// Controlling the styles for the title in the top bar
+// $topbar-title-weight: $font-weight-normal;
+// $topbar-title-font-size: rem-calc(17);
+
+// Style the top bar dropdown elements
+ $topbar-dropdown-bg: scale-color($primary-color, $lightness: -20%);
+// $topbar-dropdown-link-color: $white;
+// $topbar-dropdown-link-bg: none;
+// $topbar-dropdown-link-weight: $font-weight-normal;
+// $topbar-dropdown-toggle-size: 5px;
+ $topbar-dropdown-toggle-color: $secondary-color;
+// $topbar-dropdown-toggle-alpha: 0.4;
+
+// Set the link colors and styles for top-level nav
+// $topbar-link-color: $white;
+ $topbar-link-color-hover: $secondary-color;
+//$topbar-link-color-active: $secondary-color;
+ $topbar-link-color-active-hover: $secondary-color;
+// $topbar-link-weight: $font-weight-normal;
+// $topbar-link-font-size: rem-calc(13);
+// $topbar-link-hover-lightness: -10%; // Darken by 10%
+ $topbar-link-bg: $topbar-bg;
+  //$topbar-link-bg-color-hover: $primary-color;
+  //$topbar-link-bg-hover: $primary-color;
+  $topbar-link-bg-active: $topbar-bg;
+  //$topbar-link-bg-active-hover: $primary-color;
+// $topbar-link-font-family: $body-font-family;
+// $topbar-link-text-transform: none;
+// $topbar-link-padding: $topbar-height / 3;
+// $topbar-back-link-size: $h5-font-size;
+// $topbar-link-dropdown-padding: 20px;
+
+// $topbar-button-font-size: 0.75rem;
+// $topbar-button-top: 7px;
+
+// $topbar-dropdown-label-color: $monsoon;
+// $topbar-dropdown-label-text-transform: uppercase;
+// $topbar-dropdown-label-font-weight: $font-weight-bold;
+// $topbar-dropdown-label-font-size: rem-calc(10);
+// $topbar-dropdown-label-bg: $oil;
+
+// Top menu icon styles
+// $topbar-menu-link-transform: uppercase;
+// $topbar-menu-link-font-size: rem-calc(13);
+// $topbar-menu-link-weight: $font-weight-bold;
+// $topbar-menu-link-color: $white;
+// $topbar-menu-icon-color: $white;
+// $topbar-menu-link-color-toggled: $jumbo;
+// $topbar-menu-icon-color-toggled: $jumbo;
+
+// Transitions and breakpoint styles
+// $topbar-transition-speed: 300ms;
+// Using rem-calc for the below breakpoint causes issues with top bar
+// $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
+// $topbar-media-query: $medium-up;
+
+// Divider Styles
+// $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
+ $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+
+// Sticky Class
+// $topbar-sticky-class: ".sticky";
+// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+
+/*.top-bar{
+  border-bottom: 4px solid $secondary-color;
+}
+.right a {
+  border-bottom: 4px solid scale-color($secondary-color, $lightness: 40%);
+  padding-bottom: -4px;
+}
+
+
+/*.title-area img{
+  margin-top:8px;
+  margin-bottom:auto;
+  margin-left:1em;
+}
+
+.toggle-topbar{
+  margin-right:0.0em;
+}
+
+.top-bar-section{
+  margin-right:1em;
+}*/
+
+//TENTATIVAS DE MODIFICAR O HOVER (SEM SUCESSO)
+//.top-bar { border-bottom: 4px solid $topbar-bg; }
+//.top-bar-section  { border-bottom: transparentize($secondary-color, .9); }
+//.top-bar-section a:link  { border-bottom: 4px solid transparentize($secondary-color, .95); }
+//.top-menu-buttons li.active:not(.has-form) a:not(.button){border-bottom: 4px solid transparent;}
+//.top-bar-section li.active:not(.has-form) a:not(.button){color: $secondary-color;}
+//.top-bar-section a:hover .button { color: $secondary-color; }  //user hovers
+//.top-bar-section a:active { color: $secondary-color } // active links
+//Section_Home
+
+.top-bar-section{
+  padding:0;
+}
+
+#home{
+  padding:0;
+  .header{
+    margin:auto;
+    padding:0;
+  }
+  bg-radius{
+    //overflow: hidden;
+    width: 100%;
+    display: table;
+    text-align: center;
+  }
+
+  img.bg-radius{
+    z-index: 2;
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2em;
+    //background-color:rgba($primary-color,0.9);
+    //height:80%;
+    //width:auto;
+  }
+  p{
+    text-align:center;
+    background-color:rgba($primary-color,0.5);
+  }
+
+  .bg-header{
+    position:absolute;
+    width: rem-calc(1155);
+    //height:640px;
+    //width: 100%;
+    overflow: hidden;
+    z-index: -100;
+  }
+  img.bg-header{
+    margin:0;
+    padding:0;
+    position:absolute;
+    z-index: -100;
+    //width: rem-calc(1100);
+    width: 100%;
+    //display: block;
+    //height:640px;
+  }
+
+
+}
+
+ul.contato{
+  z-index: 2;
+  position: relative;
+  list-style-type:none;
+  background-color:rgba($primary-color,0.9);
+  margin-bottom:3em;
+  //z-index: 1;
+  a{
+    color:white;
+    :hover{color:scale-color($secondary-color, $lightness:0%)}
+    :active{color:scale-color($secondary-color, $lightness:0%)}
+  }
+
+
+li{
+  text-align:center;
+  margin-top:1em;
+  padding:auto;
+}
+}
+
+@media only screen and (min-width: 40.063em) {
+  ul li a:after{
+    color:$primary-color;
+    content: attr(data-tel) attr(data-web) attr(data-skype) attr(data-email);
+  }
+}
+
+//Section_Sobre
+
+#sobre{
+  //padding-bottom:6em;
+}
+
+.fotos-sobre{
+  padding-top:5em;
+  padding-bottom:6em;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+
+  ul{
+    list-style:none;
+  }
+
+   img{
+    margin-left:.3em;
+    margin-right:.3em;
+    padding-right:auto;
+    padding-left:auto;
+    border: solid 2px $secondary-color;
+    @include border-radius(100px);
+  }
+
+}
+
+
+//Section_Productos
+#productos{
+  //padding-top:3em;
+  background-color:#DBE0DF;
+}
+
+.productos{
+  padding:auto;
+  margin:auto;
+}
+
+.productos img{
+  //width:200px;
+  //height:280px;
+  border: solid 2px $secondary-color;
+  @include border-radius(20px);
+
+}
+
+
+
+//Section_Donde
+
+#donde{
+  //padding-top:5em;
+  //padding-bottom:3em;
+  background-color:$primary-color;
+}
+
+/*#map_canvas {
+    width: 800px;
+    height: 500px;
+    background-color: #CCC;
+  }*/
+
+//Section_Portafolio
+#portofolio{
+  //padding-top:3em;
+  //padding-bottom:6em;
+
+
+}
+
+.portafolio{
+  //margin-top:10em;
+  margin-bottom:0;
+  padding-bottom:0;
+  padding-top:0;
+
+  img{
+  //width:200px;
+  //height:280px;
+  border: solid 2px grey;
+  @include border-radius(100px);
+  }
+}
+
+//Section_Blog
+
+#blog{
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:0;
+  padding-right:0;
+  //padding-top:3em;
+  //padding-bottom:3em;
+  background-color: #DBE0DF;
+  hr{
+    color:white;
+    border: solid 1.3px;
+  }
+  li{
+    max-width:480px;
+  }
+}
+
+//Section_Contacto
+
+#contacto{
+  //padding-top:3em;
+  //padding-bottom:10em;
+  background-color:$primary-color;
+
+  a{
+    color:scale-color($primary-color, $lightness: 75%);
+  }
+  a:hover{
+    color:scale-color($primary-color, $lightness: 50%);
+  }
+  .dados{
+    text-align:center;
+    //display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+  }
+
+}
+
+
+//Footer
+
+#footer{
+  padding:0;
+  margin:0;
+  height:50px;
+  background-color:scale-color($primary-color, $lightness: -25%);
+  p{
+    position:relative;
+    float:left;
+    margin:auto;
+    //padding-top:12px;
+    top:50%;
+    transform: translateY(50%);
+    color:scale-color($primary-color, $lightness: 25%);
+
+  }
+  ul{
+    position:relative;
+    margin: auto;
+    //padding-top:12px;
+    top:50%;
+    transform: translateY(50%);
+    float:right;
+    list-style:none;
+
+    li{
+      margin-right:1.5em;
+      padding:0;
+      display:inline-block;
+
+    }
+  }
+}

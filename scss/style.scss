@@ -1,7 +1,7 @@
 /*!
-  Theme Name: Vermelho Vivov
-  Description: Tema wordpress para vermelhovivo.org usando timber
-  Author: Guilherme Guerra <guerinha@comum.org>
+  Theme Name: Zengue
+  Description: Tema wordpress para Zengue usando timber baseado no tema Vermelho Vivo de Guilherme Guerra
+  Author: Mateus Guerra
   Version: 1.0
 */
 
@@ -9,10 +9,9 @@ $fa-font-path: "bower_components/fontawesome/fonts";
 
 @import "compass";
 @import "settings";
+@import "index";
 @import "foundation";
 @import "font-awesome";
-@import "fonts";
-@import "base";
-@import "home";
-@import "single";
-@import "video";
+
+//@import "single";
+//@import "video";
