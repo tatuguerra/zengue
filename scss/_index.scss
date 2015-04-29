@@ -228,6 +228,7 @@ $button-function-factor: 0%;
 
 #home{
   padding:0;
+  background-color:rgba($primary-color,0.3);
   .header{
     margin:auto;
     padding:0;
@@ -240,7 +241,7 @@ $button-function-factor: 0%;
   }
 
   img.bg-radius{
-    z-index: 2;
+    //z-index: 2;
     position: relative;
     display: block;
     text-align: center;
@@ -257,18 +258,19 @@ $button-function-factor: 0%;
   }
 
   .bg-header{
-    position:absolute;
-    width: rem-calc(1155);
+    //position:absolute;
+    //width: rem-calc(1155);
     //height:640px;
     //width: 100%;
-    overflow: hidden;
-    z-index: -100;
+    //overflow: hidden;
+    //z-index: -100;
+
   }
   img.bg-header{
     margin:0;
     padding:0;
-    position:absolute;
-    z-index: -100;
+    //position:absolute;
+    //z-index: -100;
     //width: rem-calc(1100);
     width: 100%;
     //display: block;
