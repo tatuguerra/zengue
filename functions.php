@@ -36,25 +36,28 @@ function load_scripts(){
   wp_enqueue_script('jquery');
 }
 
+
+//Register Custom Post Type
+
 function post_joia() {
   $labels = array(
-    'name'               => _x( 'Jóia', 'post type general name' ),
-    'singular_name'      => _x( 'Jóia', 'post type singular name' ),
+    'name'               => _x( 'Joia', 'post type general name' ),
+    'singular_name'      => _x( 'Joia', 'post type singular name' ),
     'add_new'            => _x( 'Añadir', 'book' ),
-    'add_new_item'       => __( 'Añadir Jóia' ),
-    'edit_item'          => __( 'Edita Jóia' ),
-    'new_item'           => __( 'Nueva Jóia' ),
-    'all_items'          => __( 'Todas las Jóias' ),
-    'view_item'          => __( 'Vea Jóia' ),
-    'search_items'       => __( 'Buscar Jóias' ),
-    'not_found'          => __( 'No se ha encontrado niguna jóia' ),
-    'not_found_in_trash' => __( 'No se ha encontrado niguna jóia en la basura' ),
+    'add_new_item'       => __( 'Añadir Joia' ),
+    'edit_item'          => __( 'Edita Joia' ),
+    'new_item'           => __( 'Nueva Joia' ),
+    'all_items'          => __( 'Todas las Joias' ),
+    'view_item'          => __( 'Vea Joia' ),
+    'search_items'       => __( 'Buscar Joias' ),
+    'not_found'          => __( 'No se ha encontrado niguna joia' ),
+    'not_found_in_trash' => __( 'No se ha encontrado niguna joia en la basura' ),
     'parent_item_colon'  => '',
-    'menu_name'          => 'Jóias'
+    'menu_name'          => 'Joias'
   );
   $args = array(
     'labels'        => $labels,
-    'description'   => 'Holds our jóias and jóia specific data',
+    'description'   => 'Holds our joias and joia specific data',
     'public'        => true,
     'menu_position' => 5,
     'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
@@ -64,19 +67,21 @@ function post_joia() {
 }
 add_action( 'init', 'post_joia' );
 
+//Register Custom Taxonomy
+
 function taxonomies_joia() {
   $labels = array(
-    'name'              => _x( 'Categorias Jóia', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Categoria Jóia', 'taxonomy singular name' ),
-    'search_items'      => __( 'Busca Categorias de Jóia' ),
-    'all_items'         => __( 'Todas las Categorias de Jóia' ),
-    'parent_item'       => __( 'Categoria Padre de Jóia' ),
-    'parent_item_colon' => __( 'Categoria Padre de Jóia:' ),
-    'edit_item'         => __( 'Edita Categoria de Jóia' ),
-    'update_item'       => __( 'Actualiza CAtegoria de Jóia' ),
-    'add_new_item'      => __( 'Añadir Catgoria de Jóia' ),
-    'new_item_name'     => __( 'Añadir Categoria de Jóia' ),
-    'menu_name'         => __( 'Catergorias de Jóia' ),
+    'name'              => _x( 'Categorias Joia', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Categoria Joia', 'taxonomy singular name' ),
+    'search_items'      => __( 'Busca Categorias de Joia' ),
+    'all_items'         => __( 'Todas las Categorias de Joia' ),
+    'parent_item'       => __( 'Categoria Padre de Joia' ),
+    'parent_item_colon' => __( 'Categoria Padre de Joia:' ),
+    'edit_item'         => __( 'Edita Categoria de Joia' ),
+    'update_item'       => __( 'Actualiza Categoria de Joia' ),
+    'add_new_item'      => __( 'Añadir Catgoria de Joia' ),
+    'new_item_name'     => __( 'Añadir Categoria de Joia' ),
+    'menu_name'         => __( 'Catergorias de Joia' ),
   );
   $args = array(
     'labels' => $labels,
@@ -85,6 +90,8 @@ function taxonomies_joia() {
   register_taxonomy( 'joia_categoria', 'joia', $args );
 }
 add_action( 'init', 'taxonomies_joia', 0 );
+
+
 
 
 /*function arphabet_widgets_init() {

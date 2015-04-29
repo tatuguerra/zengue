@@ -113,6 +113,7 @@
       <div class="row">
         <div class="medium-8 medium-centered columns hide-for-small-only">
           <ul class="small-block-grid-1 medium-block-grid-5 menu">
+
             <li><a href="#" class="button small expand radius">todos</a></li>
             <li><a href="#" class="button small expand radius">anillos</a></li>
             <li><a href="#" class="button small expand radius">collares</a></li>
@@ -133,30 +134,13 @@
       </div>
       <div class="small-12 small-centered columns">
         <ul class="medium-block-grid-4 productos">
+          {% for joia in joias | slice(0,8) %}
           <li>
-            <div><img src="img/anel1.jpg" alt=""></div>
+            <div>
+              <a href=""><img src="{{joia.thumbnail.src|resize(300, 300)}}" class="my-thumb-class" alt="Image for {{post.title}}"></a>
+            </div>
           </li>
-          <li>
-            <div><img src="img/anel2.jpg" alt=""></div>
-          </li>
-          <li>
-            <div><img src="img/pingente1.jpg" alt=""></div>
-          </li>
-          <li>
-            <div><img src="img/pingente2.jpg" alt=""></div>
-          </li>
-          <li>
-            <div><img src="img/pulseira1.jpg" alt=""></div>
-          </li>
-          <li>
-            <div><img src="img/pulseira2.jpg" alt=""></div>
-          </li>
-          <li>
-            <div><img src="img/broche.jpg" alt=""></div>
-          </li>
-          <li>
-            <div><img src="img/pingente3.jpg" alt=""></div>
-          </li>
+          {% endfor %}
         </ul>
         <a href="#">ver mas trabajos</a>
       </div>
