@@ -3,29 +3,29 @@
 {% block content %}
 
 <header>
-    <nav class="top-bar" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="#">ZENGUE</a></h1>
-          <a href="#"><img src="img/zengueBlanco.png" alt=""height="auto" width="130"></a>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-      </ul>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">{{site.title}}</a></h1>
+        <a href="#"><img src="img/zengueBlanco.png" alt=""height="auto" width="130"></a>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul id="top-menu-bts" class="right">
-          <li class="active"><a href="#">HOME</a></li>
-          <li class="active"><a href="#sobre">SOBRE</a></li>
-          <li class="active"><a href="#productos">PIEZAS</a></li>
-          <li class="active"><a href="#donde">DONDE</a></li>
-          <li class="active"><a href="#portofolio">PORTOFOLIO</a></li>
-          <li class="active"><a href="#blog">BLOG(?)</a></li>
-          <li class="active"><a href="#contacto">CONTACTO</a></li>
-        </ul>
-      </section>
-    </nav>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul id="top-menu-bts" class="right">
+        <li class="active"><a href="#">HOME</a></li>
+        <li class="active"><a href="#sobre">SOBRE</a></li>
+        <li class="active"><a href="#productos">PIEZAS</a></li>
+        <li class="active"><a href="#donde">DONDE</a></li>
+        <li class="active"><a href="#portofolio">PORTOFOLIO</a></li>
+        <li class="active"><a href="#blog">BLOG(?)</a></li>
+        <li class="active"><a href="#contacto">CONTACTO</a></li>
+      </ul>
+    </section>
+  </nav>
 </header>
 
 <section id="home">
@@ -75,7 +75,7 @@
   <div class="row">
     <div class="small-12 columns">
       <h2>SOBRE</h2>
-      <div class="row fotos-sobre">
+      <div class="row fotos-sobre center">
         <div class="small-8 small-centered columns">
           <ul class="small-block-grid-1 medium-block-grid-3">
             <li class="show-for-medium-up"><img src="{{site.theme.link}}/images/zengue-foto.png" alt="foto zengue"></li>
@@ -110,21 +110,18 @@
   <div class="row">
     <div class="small-12 columns">
       <h2>PRODUCTOS</h2>
-
-        <div class="small-12 small-centered columns">
-          <ul class="medium-block-grid-4 productos">
-            {% for joia in joias | slice(0,3) %}
-            <li>
-              <div>
-                <a href="{{joia.link}}"><img src="{{joia.thumbnail.src|resize(300, 300)}}" class="my-thumb-class" alt="Image for {{post.title}}"></a>
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
-
-          <div class="center"><a class="tiny button" href="#">ver mas trabajos</a></div>
-        </div>
-
+      <div class="productos">
+        <ul class="medium-block-grid-4">
+          {% for joia in joias | slice(0,3) %}
+          <li>
+            <div>
+              <a href="{{joia.link}}"><img src="{{joia.thumbnail.src|resize(250, 300)}}" class="my-thumb-class" alt="Image for {{post.title}}"></a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="center"><a class="tiny button" href="#">ver mas trabajos</a></div>
     </div>
   </div>
 </section>
@@ -152,7 +149,7 @@
 <section id="portofolio">
   <div class="row">
     <div class="small-12 columns">
-      <h2>PORTOFOLIO</h2>
+      <h2>PORTFOLIO</h2>
       <ul class="medium-block-grid-4 portafolio">
         <li>
           <div><img src="img/anel2.jpg" alt=""></div>
@@ -176,81 +173,40 @@
   <div class="row">
     <div class="small-12 columns">
       <h2>BLOG</h2>
-      <ul class="medium-block-grid-2">
-        <li>
-          <hr>
-          <ul class="medium-block-grid-2">
-            <li><img src="img/pingente1.jpg" alt="">
+      <div class="row posts">
+        <div class="small-12 small-centered medium-8 medium-centered columns">
+          <ul class="row">
+          {% for post in posts | slice(0,2) %}
+            <li class="small-12 small-centered columns">
+              {% if post.thumbnail.src %}
+
+              <img src="{{post.thumbnail.src}}" alt="">
+
+              {% endif %}
+
+              <h3 class="center">{{post.title}}</h3>
+              <p class="meta-post center">{{post.date}} by {{post.author.name}}</p>
+              <p>{{post.get_preview(80,false, '')}}</p>
+              <div class="readmore center">
+                <hr>
+                <a href="" class="tiny button">Read More</a>
+              </div>
             </li>
-            <li>
-              <h3>Lorem Ipsum Dolor</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin at nunc ut est iaculis maximus a vitae ligula.
-                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
-                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
-                eget vehicula dui nunc vitae risus.(...)
-              </p>
-            </li>
+          {% endfor %}
           </ul>
-          <hr>
-        </li>
-        <li>
-          <hr>
-          <ul class="medium-block-grid-1">
-            <li>
-              <h3>Lorem Ipsum Dolor</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin at nunc ut est iaculis maximus a vitae ligula.
-                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
-                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
-                eget vehicula dui nunc vitae risus.(...)
-              </p>
-            </li>
-          </ul>
-          <hr>
-        </li>
-        <li>
-          <hr>
-          <ul class="medium-block-grid-1">
-            <li>
-              <h3>Lorem Ipsum Dolor</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin at nunc ut est iaculis maximus a vitae ligula.
-                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
-                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
-                eget vehicula dui nunc vitae risus.(...)
-              </p>
-            </li>
-          </ul>
-          <hr>
-        </li>
-        <li>
-          <hr>
-          <ul class="medium-block-grid-2">
-            <li><img src="img/pingente1.jpg" alt=""></li>
-            <li>
-              <h3>Lorem Ipsum Dolor</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin at nunc ut est iaculis maximus a vitae ligula.
-                Vestibulum purus ex, lobortis eu euismod non, vehicula et eros.
-                Donec molestie, tortor ac dictum ultricies, massa diam volutpat elit,
-                eget vehicula dui nunc vitae risus.(...)
-              </p>
-            </li>
-          </ul>
-          <hr>
-        </li>
-      </ul>
-      <a href="">leer blog</a>
+        </div>
+      </div>
     </div>
+    <div class="center"><a class="tiny button" href="">leer blog</a></div>
   </div>
+</div>
 </section>
 
 <section id="contacto">
   <div class="row">
     <div class="small-12 columns">
       <h2>CONTACTO</h2>
-
+      <div class="contacto">
       <div class="row">
         <div class="small-12 medium-8 small-centered columns">
           <ul class="dados small-block-grid-2" ><!-- href doesn't work for other than www or mail (check other forms) -->
@@ -294,10 +250,11 @@
           </div>
         </div>
       </form>
-      <div class="row">
-        <div class="small-12 medium-8 small-centered columns">
-          <a href="#" class="">Enviar >></a>
-        </div>
+      </div>
+      <div class="center">
+
+          <a href="#" class="tiny button">Send</a>
+
       </div>
 
     </div>
