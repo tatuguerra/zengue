@@ -402,12 +402,23 @@ li{
 
 #blog{
 
-  //padding-top:3em;
-  //padding-bottom:3em;
   background-color: #DBE0DF;
   hr{
+
     color:white;
     border: solid 1px;
+  }
+  .readmore{
+    padding-top:1rem;
+  }
+  .readmore a{
+    position:relative;
+    display: inline-block;
+    top: -38px;
+    background-color: #DBE0DF;
+  }
+  .readmore a:hover{
+    background-color:white;
   }
   .posts{
     padding-top:3em;
