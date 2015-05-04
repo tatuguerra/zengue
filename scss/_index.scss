@@ -42,6 +42,11 @@
     text-align:center;
   }
 
+  //list
+  li{
+    list-style:none;
+  }
+
   a{
     color:$secondary-color;
     :hover{color:$secondary-color;}
@@ -77,7 +82,7 @@
 
   // We use these to control button text styles.
   // $button-font-family: $body-font-family;
-  // $button-font-color: $white;
+ $button-font-color: $secondary-color;
  $button-font-color-alt: $secondary-color;
   // $button-font-tny: rem-calc(11);
   // $button-font-sml: rem-calc(13);
@@ -315,8 +320,8 @@ li{
 }
 
 .fotos-sobre{
-  padding-top:5em;
-  padding-bottom:6em;
+  padding-top:3em;
+  padding-bottom:2em;
   display:block;
   margin-left:auto;
   margin-right:auto;
@@ -339,13 +344,12 @@ li{
 
 //Section_Productos
 #productos{
-  //padding-top:3em;
   background-color:#DBE0DF;
 }
 
 .productos{
-  padding:auto;
-  margin:auto;
+  padding-top:3em;
+  padding-bottom:4em;
 }
 
 .productos img{
@@ -397,28 +401,30 @@ li{
 //Section_Blog
 
 #blog{
-  margin-left:auto;
-  margin-right:auto;
-  padding-left:0;
-  padding-right:0;
+
   //padding-top:3em;
   //padding-bottom:3em;
   background-color: #DBE0DF;
   hr{
     color:white;
-    border: solid 1.3px;
+    border: solid 1px;
   }
-  li{
-    max-width:480px;
+  .posts{
+    padding-top:3em;
+    padding-bottom:4em;
   }
 }
 
 //Section_Contacto
 
 #contacto{
-  //padding-top:3em;
-  //padding-bottom:10em;
+
   background-color:$primary-color;
+
+  .contacto{
+    padding-top:3em;
+    padding-top:1em;
+  }
 
   a{
     color:scale-color($primary-color, $lightness: 75%);
@@ -436,12 +442,13 @@ li{
 
 
 //Footer
-
 #footer{
+  
   padding:0;
   margin:0;
-  height:50px;
+  height:150px;
   background-color:scale-color($primary-color, $lightness: -25%);
+
   p{
     position:relative;
     float:left;
