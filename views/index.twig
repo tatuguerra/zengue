@@ -114,8 +114,11 @@
         <ul class="medium-block-grid-4">
           {% for joia in joias | slice(0,3) %}
           <li>
-            <div>
-              <a href="{{joia.link}}"><img src="{{joia.thumbnail.src|resize(250, 300)}}" class="my-thumb-class" alt="Image for {{post.title}}"></a>
+            <div class="producto">
+              <a href="{{joia.permalink}}">
+              <p>{{joia.title}}</p>
+              <img src="{{joia.thumbnail.src|resize(250, 300)}}" class="my-thumb-class" alt="Image for {{post.title}}">
+              </a>
             </div>
           </li>
           {% endfor %}
@@ -189,7 +192,7 @@
               <p>{{post.get_preview(80,false, '')}}</p>
               <div class="readmore center">
                 <hr>
-                <a href="" class="tiny button">Read More</a>
+                <a href="{{post.permalink}}" class="tiny button">Read More</a>
               </div>
             </li>
           {% endfor %}

@@ -357,14 +357,60 @@ li{
   padding-bottom:4em;
 }
 
-.productos img{
+.producto{
   //width:200px;
   //height:280px;
   border: solid 2px $secondary-color;
   @include border-radius(20px);
-
 }
 
+.producto a p{
+  margin:0;
+  padding:0;
+  color:white;
+  opacity:0;
+  text-align:center;
+  top:180px;
+  z-index:1;
+  position:relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.producto a:hover p{
+  opacity:1;
+  top:150px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.producto img{
+  margin-top: -25.5px;
+}
+
+.producto a img{
+
+  @include border-radius(20px);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.producto a:hover img{
+  filter: brightness(35%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
 
 
 //Section_Donde
