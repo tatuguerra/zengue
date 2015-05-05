@@ -365,14 +365,13 @@ li{
 }
 
 .producto a p{
-  margin:0;
-  padding:0;
+  padding:10px;
+  position:absolute;
+  //text-align:center;
+  top:290px;
   color:white;
   opacity:0;
-  text-align:center;
-  top:180px;
   z-index:1;
-  position:relative;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -381,7 +380,7 @@ li{
 }
 .producto a:hover p{
   opacity:1;
-  top:150px;
+  top:280px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -390,7 +389,7 @@ li{
 }
 
 .producto img{
-  margin-top: -25.5px;
+  //margin-top: -25.5px;
 }
 
 .producto a img{
