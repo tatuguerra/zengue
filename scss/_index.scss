@@ -367,7 +367,6 @@ li{
 .producto a p{
   padding:10px;
   position:absolute;
-  //text-align:center;
   top:290px;
   color:white;
   opacity:0;
@@ -388,12 +387,7 @@ li{
   transition: all 1s ease;
 }
 
-.producto img{
-  //margin-top: -25.5px;
-}
-
 .producto a img{
-
   @include border-radius(20px);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
