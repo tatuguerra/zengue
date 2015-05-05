@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section id="joia-single">
+  <div class="row">
+    <div class="small-4 columns">
+      <h2>PIEZAS</h2>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="row">
+    <div class="small-8 small-centered columns">
+      <ul class="small-block-grid-1 medium-block-grid-5 menu">
+        <li><a href="#" class="button small expand radius">todos</a></li>
+        <li><a href="#" class="button small expand radius">anillos</a></li>
+        <li><a href="#" class="button small expand radius">collares</a></li>
+        <li><a href="#" class="button small expand radius">pulseras</a></li>
+        <li><a href="#" class="button small expand radius">pendientes</a></li>
+      </ul>
+    </div>
+  </div>
+
+    <br />
+  <div class="row">
+    <div class="small-12 medium-6 medium-offset-1 columns carroussel">
+      <ul class="example-orbit" data-orbit>
+        <li>
+          <img src="../assets/img/examples/satelite-orbit.jpg" alt="slide 1" />
+          <div class="orbit-caption">
+            Caption One.
+          </div>
+        </li>
+        <li class="active">
+          <img src="../assets/img/examples/andromeda-orbit.jpg" alt="slide 2" />
+          <div class="orbit-caption">
+            Caption Two.
+          </div>
+        </li>
+        <li>
+          <img src="../assets/img/examples/launch-orbit.jpg" alt="slide 3" />
+          <div class="orbit-caption">
+            Caption Three.
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="small-12 medium-3 medium-offset-1 end columns ficha-tecnica">
+      <h3>{{post.title}}</h3>
+      <p>{{post.content}}</p>
+    </div>
+  </div>
+
+</section>
+
+<br />
+{% endblock %}
