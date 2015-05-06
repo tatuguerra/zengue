@@ -23,7 +23,7 @@
 
   <div id="page-wrap">
 
-    
+
     {% block content %}
 
     {% endblock %}
@@ -37,8 +37,12 @@
   </div>
   <script src="{{site.theme.link}}/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="{{site.theme.link}}/bower_components/foundation/js/foundation.min.js"></script>
+  <script src="{{site.theme.link}}/js/foundation/foundation.clearing.js"></script>
   <script src="{{site.theme.link}}/js/app.js"></script>
   <script src="{{site.theme.link}}/js/site.js"></script>
   <!--<script src="{{site.theme.link}}/js/maps2.js"></script>-->
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
