@@ -111,10 +111,11 @@ function f5_gallery( $output, $attr ) {
 		'order'   => 'ASC',
 		'orderby' => 'menu_order ID',
 		'id'      => $post->ID,
-		'columns' => 4,
+		'columns' => 3,
 		'size'    => 'thumbnail',
 		'include' => '',
 		'exclude' => '',
+		'link'    => 'file',
 	), $attr ) );
 
 
@@ -139,7 +140,8 @@ function f5_gallery( $output, $attr ) {
 			$attachments[ $val->ID ] = $attachments_arr[ $key ];
 		}
 	}
-  if ( empty( $attachments ) ) {
+
+	if ( empty( $attachments ) ) {
 		return '';
 	}
 
