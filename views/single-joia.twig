@@ -27,24 +27,46 @@
   <div class="row">
     <div class="small-12 medium-6 medium-offset-1 columns carroussel">
       <ul class="example-orbit" data-orbit>
-        <li>
-          <img src="../assets/img/examples/satelite-orbit.jpg" alt="slide 1" />
-          <div class="orbit-caption">
-            Caption One.
-          </div>
-        </li>
-        <li class="active">
-          <img src="../assets/img/examples/andromeda-orbit.jpg" alt="slide 2" />
-          <div class="orbit-caption">
-            Caption Two.
-          </div>
-        </li>
-        <li>
-          <img src="../assets/img/examples/launch-orbit.jpg" alt="slide 3" />
-          <div class="orbit-caption">
-            Caption Three.
-          </div>
-        </li>
+            {% if post.get_field('wpcf-imagen-1a') %}
+            <li>
+              <img src="{{post.get_field('wpcf-imagen-1a')|resize(500, 300)}}" alt="slide 2" />
+              <div class="orbit-caption">
+                {{post.get_field('wpcf-caption-1')}}
+              </div>
+            </li>
+            {% endif %}
+            {% if post.get_field('wpcf-imagen-2') %}
+            <li>
+              <img src="{{post.get_field('wpcf-imagen-2')|resize(500, 300)}}" alt="slide 3" />
+              <div class="orbit-caption">
+                {{post.get_field('wpcf-caption-2')}}
+              </div>
+            </li>
+            {% endif %}
+            {% if post.get_field('wpcf-imagen-3') %}
+            <li>
+              <img src="{{post.get_field('wpcf-imagen-3')|resize(500, 300)}}" alt="slide 4" />
+              <div class="orbit-caption">
+                {{post.get_field('wpcf-caption-3')}}
+              </div>
+            </li>
+            {% endif %}
+            {% if post.get_field('wpcf-imagen-4') %}
+            <li>
+              <img src="{{post.get_field('wpcf-imagen-4')|resize(500, 300)}}" alt="slide 5" />
+              <div class="orbit-caption">
+                {{post.get_field('wpcf-caption-4')}}
+              </div>
+            </li>
+            {% endif %}
+            {% if post.get_field('wpcf-imagen-5') %}
+            <li>
+              <img src="{{post.get_field('wpcf-imagen-5')|resize(500, 300)}}" alt="slide 1" />
+              <div class="orbit-caption">
+                {{post.get_field('wpcf-caption-5')}}
+              </div>
+            </li>
+            {% endif %}
       </ul>
     </div>
     <div class="small-12 medium-3 medium-offset-1 end columns ficha-tecnica">
@@ -52,7 +74,6 @@
       <p>{{post.content}}</p>
     </div>
   </div>
-
 </section>
 
 <br />
