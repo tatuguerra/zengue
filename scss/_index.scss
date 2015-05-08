@@ -69,168 +69,63 @@
     width:12rem;
   }
 
+  //filter
+    // https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html
+    //
+    // grayscale      ex: filter: grayscale(100%);
+    // sepia          ex: filter: sepia(100%);
+    // saturate       ex: filter: saturate(0%);
+    // hue-rotate     ex: filter: hue-rotate(45deg);
+    // invert         ex: filter: invert(100%);
+    // brightness     ex: filter: brightness(15%);
+    // contrast       ex: filter: contrast(200%);
+    // blur           ex: filter: blur(2px);
 
-  // 05. Buttons
-  // - - - - - - - - - - - - - - - - - - - - - - - - -
+    @mixin filter($filter-type,$filter-amount) {
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+    }
 
-  // $include-html-button-classes: $include-html-classes;
-
-  // We use these to build padding for buttons.
-  // $button-tny: rem-calc(10);
-  // $button-sml: rem-calc(14);
-  // $button-med: rem-calc(16);
-  // $button-lrg: rem-calc(18);
-
-  // We use this to control the display property.
-  // $button-display: inline-block;
-  // $button-margin-bottom: rem-calc(20);
-
-  // We use these to control button text styles.
-  // $button-font-family: $body-font-family;
+// 05. Buttons
+// We use these to control button text styles.
  $button-font-color: $secondary-color;
  $button-font-color-alt: $secondary-color;
-  // $button-font-tny: rem-calc(11);
-  // $button-font-sml: rem-calc(13);
-  // $button-font-med: rem-calc(16);
-  // $button-font-lrg: rem-calc(20);
-  // $button-font-weight: $font-weight-normal;
-  // $button-font-align: center;
 
-  // We use these to control various hover effects.
-$button-function-factor: 0%;
+// We use these to control various hover effects.
+ $button-function-factor: 0%;
 
-
-
-  // We use this to set the default radius used throughout the core.
-  // $button-radius: $global-radius;
-  // $button-round: $global-rounded;
-
-  // We use this to set default opacity and cursor for disabled buttons.
-  // $button-disabled-opacity: 0.7;
-  // $button-disabled-cursor: $cursor-default-value;
-
-  // We use these to control button border and hover styles.
-   $button-border-width: 2px;
-  // $button-border-style: solid;
+// We use these to control button border and hover styles.
+ $button-border-width: 2px;
  $button-bg-color: transparent;
  $button-bg-hover: scale-color(white, $lightness: $button-function-factor);
  $button-border-color: $secondary-color;
  $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
-
  $secondary-button-border-color: $secondary-button-bg-hover;
-  // $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
-  //$success-button-border-color: $success-button-bg-hover;
-  // $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor);
-  // $alert-button-border-color: $alert-button-bg-hover;
 
 //Top bar
-
-
 // Background color for the top bar
- $topbar-bg-color: scale-color($primary-color, $lightness: -20%);
- $topbar-bg: $topbar-bg-color;
-
+$topbar-bg-color: scale-color($primary-color, $lightness: -20%);
+  $topbar-bg: $topbar-bg-color;
 
 // Height and margin
- $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-height: 45px;
 
-// Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
  $topbar-dropdown-bg: scale-color($primary-color, $lightness: -20%);
-// $topbar-dropdown-link-color: $white;
-// $topbar-dropdown-link-bg: none;
-// $topbar-dropdown-link-weight: $font-weight-normal;
-// $topbar-dropdown-toggle-size: 5px;
  $topbar-dropdown-toggle-color: $secondary-color;
-// $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
- $topbar-link-color-hover: $secondary-color;
-//$topbar-link-color-active: $secondary-color;
- $topbar-link-color-active-hover: $secondary-color;
-// $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
- $topbar-link-bg: $topbar-bg;
-  //$topbar-link-bg-color-hover: $primary-color;
-  //$topbar-link-bg-hover: $primary-color;
-  $topbar-link-bg-active: $topbar-bg;
-  //$topbar-link-bg-active-hover: $primary-color;
-// $topbar-link-font-family: $body-font-family;
-// $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
-// $topbar-back-link-size: $h5-font-size;
-// $topbar-link-dropdown-padding: 20px;
-
-// $topbar-button-font-size: 0.75rem;
-// $topbar-button-top: 7px;
-
-// $topbar-dropdown-label-color: $monsoon;
-// $topbar-dropdown-label-text-transform: uppercase;
-// $topbar-dropdown-label-font-weight: $font-weight-bold;
-// $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: $oil;
-
-// Top menu icon styles
-// $topbar-menu-link-transform: uppercase;
-// $topbar-menu-link-font-size: rem-calc(13);
-// $topbar-menu-link-weight: $font-weight-bold;
-// $topbar-menu-link-color: $white;
-// $topbar-menu-icon-color: $white;
-// $topbar-menu-link-color-toggled: $jumbo;
-// $topbar-menu-icon-color-toggled: $jumbo;
-
-// Transitions and breakpoint styles
-// $topbar-transition-speed: 300ms;
-// Using rem-calc for the below breakpoint causes issues with top bar
-// $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
-// $topbar-media-query: $medium-up;
+$topbar-link-color-hover: $secondary-color;
+$topbar-link-color-active-hover: $secondary-color;
+$topbar-link-bg: $topbar-bg;
+$topbar-link-bg-active: $topbar-bg;
 
 // Divider Styles
-// $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
  $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
-
-// Sticky Class
-// $topbar-sticky-class: ".sticky";
-// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
-
-/*.top-bar{
-  border-bottom: 4px solid $secondary-color;
-}
-.right a {
-  border-bottom: 4px solid scale-color($secondary-color, $lightness: 40%);
-  padding-bottom: -4px;
-}
-
-
-/*.title-area img{
-  margin-top:8px;
-  margin-bottom:auto;
-  margin-left:1em;
-}
-
-.toggle-topbar{
-  margin-right:0.0em;
-}
-
-.top-bar-section{
-  margin-right:1em;
-}*/
-
-//TENTATIVAS DE MODIFICAR O HOVER (SEM SUCESSO)
-//.top-bar { border-bottom: 4px solid $topbar-bg; }
-//.top-bar-section  { border-bottom: transparentize($secondary-color, .9); }
-//.top-bar-section a:link  { border-bottom: 4px solid transparentize($secondary-color, .95); }
-//.top-menu-buttons li.active:not(.has-form) a:not(.button){border-bottom: 4px solid transparent;}
-//.top-bar-section li.active:not(.has-form) a:not(.button){color: $secondary-color;}
-//.top-bar-section a:hover .button { color: $secondary-color; }  //user hovers
-//.top-bar-section a:active { color: $secondary-color } // active links
-//Section_Home
 
 .top-bar-section{
   padding:0;
@@ -368,41 +263,42 @@ li{
   padding:10px;
   position:absolute;
   top:290px;
-  color:white;
+  color:$secondary-color;
+  background-color:white;
   opacity:0;
   z-index:1;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  transition: all .6s ease;
 }
 .producto a:hover p{
   opacity:1;
   top:280px;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  transition: all .6s ease;
 }
 
 .producto a img{
   @include border-radius(20px);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  transition: all .6s ease;
 }
 
 .producto a:hover img{
-  filter: brightness(35%);
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  transition: all 1s ease;
+  @include filter(grayscale, 100%);
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  -ms-transition: all .6s ease;
+  transition: all .6s ease;
 }
 
 
@@ -420,7 +316,7 @@ li{
     background-color: #CCC;
   }*/
 
-//Section_Portafolio
+//Section_Portfolio
 #portofolio{
   //padding-top:3em;
   //padding-bottom:6em;

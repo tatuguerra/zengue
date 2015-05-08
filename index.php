@@ -22,9 +22,11 @@
         $joias_args = 'post_type=Joia';
 	$context['joias'] = Timber::get_posts($joias_args);
 
+	$post = new TimberPost();
+	$context['post'] = Timber::get_post('post_type=page');
 
 	$templates = array('index.twig');
 	if (is_home()){
-		array_unshift($templates, 'home.twig');
+		array_unshift($templates,'home.twig');
 	}
-	Timber::render($templates, $context);
+	Timber::render($templates,$context);
