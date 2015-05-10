@@ -67,7 +67,7 @@ function post_joia() {
 }
 add_action( 'init', 'post_joia' );
 
-//Register Custom Taxonomy
+//Register Joia Post Type
 
 function taxonomies_joia() {
   $labels = array(
@@ -90,6 +90,62 @@ function taxonomies_joia() {
   register_taxonomy( 'joia_categoria', 'joia', $args );
 }
 add_action( 'init', 'taxonomies_joia', 0 );
+
+
+//Register Sobre Post Type
+
+function post_sobre() {
+  $labels = array(
+    'name'               => _x( 'Sobres', 'post type general name' ),
+    'singular_name'      => _x( 'Sobre', 'post type singular name' ),
+    'add_new'            => _x( 'Añadir', 'book' ),
+    'add_new_item'       => __( 'Añadir Sobre' ),
+    'edit_item'          => __( 'Edita Sobre' ),
+    'new_item'           => __( 'Nuevo Sobre' ),
+    'all_items'          => __( 'Todos los Sobre' ),
+    'view_item'          => __( 'Vea Sobre' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Sobre'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our sobre and sobre specific data',
+    'public'        => true,
+    'menu_position' => 6,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+    'has_archive'   => false,
+  );
+  register_post_type( 'sobre', $args );
+}
+add_action( 'init', 'post_sobre' );
+
+
+//Register Portfolio Post Type
+
+function post_portfolio() {
+  $labels = array(
+    'name'               => _x( 'Portfolios', 'post type general name' ),
+    'singular_name'      => _x( 'Portfolio', 'post type singular name' ),
+    'add_new'            => _x( 'Añadir', 'book' ),
+    'add_new_item'       => __( 'Añadir Portfolio' ),
+    'edit_item'          => __( 'Edita Portfolio' ),
+    'new_item'           => __( 'Nuevo Portfolio' ),
+    'all_items'          => __( 'Todos los Portfolio' ),
+    'view_item'          => __( 'Vea Portfolio' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Portfolio'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our sobre and sobre specific data',
+    'public'        => true,
+    'menu_position' => 7,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+    'has_archive'   => false,
+  );
+  register_post_type( 'portfolio', $args );
+}
+add_action( 'init', 'post_portfolio' );
 
 // =======================================================================//
 // Foundation5 Gallery-Output with Clearing(JS)
@@ -160,6 +216,9 @@ function f5_gallery( $output, $attr ) {
 
 	return $output;
 }
+
+
+
 
 
 
