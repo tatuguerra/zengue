@@ -22,8 +22,15 @@
         $joias_args = 'post_type=Joia';
 	$context['joias'] = Timber::get_posts($joias_args);
 
+	$sobre_args = 'post_type=Sobre';
+	$context['sobre'] = Timber::get_posts($sobre_args);
+
+	$portfolio_args = 'post_type=Portfolio';
+  $context['portfolio'] = Timber::get_posts($portfolio_args);
+
 	$post = new TimberPost();
 	$context['post'] = Timber::get_post('post_type=page');
+
 
 	$templates = array('index.twig');
 	if (is_home()){

@@ -1,9 +1,14 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<div class="row">
-  <div class="large-12 columns">
-    {{post.content}}
+<section id="portofolio">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>PORTFOLIO</h2>
+      {% for post in portfolio | slice (1,2) %}
+        {{post.content}}
+      {% endfor %}
+    </div>
   </div>
-</div>
+</section>
 {% endblock %}

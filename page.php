@@ -25,4 +25,7 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
+$portfolio_args = 'post_type=Portfolio';
+$context['portfolio'] = Timber::get_posts($portfolio_args);
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

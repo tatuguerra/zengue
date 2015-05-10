@@ -71,7 +71,30 @@
 </section>
 
 <!--Sobre-->
-{% include 'page-index-sobre.twig' %}
+<section id="sobre">
+  <div class="row">
+    <div class="small-12 columns">
+      {% for post in sobre %}
+      <h2>{{post.post_title}}</h2>
+      <div class="row fotos-sobre center">
+        <div class="small-8 small-centered columns">
+          <ul class="small-block-grid-1 medium-block-grid-3">
+            <li class="show-for-medium-up"><img src="{{post.thumbnail.src}}" alt="foto zengue"></li>
+            <li><img src="{{post.thumbnail.src}}" alt="foto zengue"></li>
+            <li class="show-for-medium-up"><img src="{{post.thumbnail.src}}" alt="foto zengue"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-10 small-centered columns text-sobre">
+          {{post.content}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 
 <!--Producto-->
 <section id="productos">
@@ -80,7 +103,7 @@
       <h2>PRODUCTOS</h2>
       <div class="productos">
         <ul class="medium-block-grid-4">
-          {% for joia in joias | slice(0,3) %}
+          {% for joia in joias | slice(0,4) %}
           <li>
             <div class="producto">
               <a href="{{joia.permalink}}">
@@ -118,7 +141,17 @@
 
 <!--Portfolio-->
 
-{% include 'page-index-portfolio.twig' %}
+<section id="portofolio">
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>PORTFOLIO</h2>
+      {% for post in portfolio | slice (0,1) %}
+        {{post.content}}
+      {% endfor %}
+    </div>
+    <div class="center"><a class="tiny button b2x" href="#">ver mas portfolio</a></div>
+  </div>
+</section>
 
 
 
