@@ -305,16 +305,40 @@ li{
 //Section_Donde
 
 #donde{
-  //padding-top:5em;
-  //padding-bottom:3em;
   background-color:$primary-color;
+  .donde_content{
+    padding-top: 3em;
+  }
+  #marker_list{
+    margin-left:0;
+    li{
+      text-align:center;
+      margin-bottom:0.5em;
+      cursor: pointer;
+      border: solid 2px $secondary-color;
+      background-color:rgba(255, 255, 255, 0);
+      -webkit-transition: all .6s ease;
+      -moz-transition: all .6s ease;
+      -o-transition: all .6s ease;
+      -ms-transition: all .6s ease;
+      transition: all .6s ease;
+      &:hover {
+        background-color:rgba(255, 255, 255, 1);
+       -webkit-transition: all .6s ease;
+       -moz-transition: all .6s ease;
+       -o-transition: all .6s ease;
+       -ms-transition: all .6s ease;
+       transition: all .6s ease;
+      }
+    }
+    -webkit-columns: 4 150px;
+    -moz-columns: 4 150px;
+    columns: 4 150px;
+    -webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    column-gap: 2em;
+  }
 }
-
-/*#map_canvas {
-    width: 800px;
-    height: 500px;
-    background-color: #CCC;
-  }*/
 
 //Section_Portfolio
 #portfolio{

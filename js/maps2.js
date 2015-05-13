@@ -54,9 +54,8 @@ function createMarkerButton(marker) {
   //Creates a sidebar button
   var ul = document.getElementById("marker_list");
   var li = document.createElement("li");
-  var a = document.createElement("a");
   var title = marker.getTitle();
-  li.a.innerHTML = title;
+  li.innerHTML = title;
   ul.appendChild(li);
 
 
