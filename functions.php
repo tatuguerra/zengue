@@ -12,6 +12,7 @@ add_filter('timber_context', 'add_to_context');
 add_action('wp_enqueue_scripts', 'load_scripts');
 add_filter('show_admin_bar', '__return_false'); //tt_REMOVE WP ADMIN BAR
 
+
 define('THEME_URL', get_template_directory_uri());
 function add_to_context($data){
   /* this is where you can add your own data to Timber's context object */
@@ -35,6 +36,8 @@ function myfoo($text){
 function load_scripts(){
   wp_enqueue_script('jquery');
 }
+
+
 
 
 //Register Custom Post Type
