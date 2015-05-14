@@ -58,7 +58,6 @@ function createMarkerButton(marker) {
   li.innerHTML = title;
   ul.appendChild(li);
 
-
   //Trigger a click event to marker when the button is clicked.
   google.maps.event.addDomListener(li, "click", function(){
     google.maps.event.trigger(marker, "click");
