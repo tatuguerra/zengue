@@ -260,13 +260,18 @@ li{
 }
 
 .producto a p{
-  padding:10px;
-  position:absolute;
-  top:290px;
+  text-align: center;
+  //padding:10px;
+  //position:absolute;
+  //top:290px;
   color:$secondary-color;
   background-color:white;
   opacity:0;
   z-index:1;
+  position: absolute;
+  height: auto;
+  width: 249px;
+  top: 343px;
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
   -o-transition: all .6s ease;
@@ -275,7 +280,7 @@ li{
 }
 .producto a:hover p{
   opacity:1;
-  top:280px;
+  top:340px;
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
   -o-transition: all .6s ease;
