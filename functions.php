@@ -225,6 +225,7 @@ function f5_gallery( $output, $attr ) {
 
 
 
+
 /*function arphabet_widgets_init() {
   register_sidebar( array(
   'name' => 'Sidebar',

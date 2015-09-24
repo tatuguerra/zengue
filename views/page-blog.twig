@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% include 'header.twig' %}
+<!-- ----------- CONTENT -------------- -->
+<div class="row content-wrap">
+  <div class="large-9 columns">
+
+<!-- -----------COLUMNA BLOG-------------- -->
+    <div class="row">
+      <div class="large-12 columns blog-col">
+       <!--Blog-->
+        <section id="blog">
+          <div class="row">
+            <div class="small-12 columns">
+              <h2>BLOG</h2>
+              <div class="row posts">
+                <div class="small-12 small-centered medium-8 medium-centered columns">
+                  <ul class="row">
+                  {% for post in posts | slice(0,6) %}
+                    <li class="small-12 small-centered columns">
+                      {% if post.thumbnail.src %}
+
+                      <img src="{{post.thumbnail.src}}" alt="">
+
+                      {% endif %}
+
+                      <h3 class="center">{{post.title}}</h3>
+                      <p class="meta-post center">{{post.date}} by {{post.author.name}}</p>
+                      <p>{{post.get_preview(80,false, '')}}</p>
+                      <div class="readmore center">
+                        <hr/>
+                        <a href="{{post.permalink}}" class="tiny button">Read More</a>
+                      </div>
+                    </li>
+                  {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="center"><a class="tiny button b2x" href="">leer blog</a></div>
+          </div>
+        </section>
+
+        <!-- -----------PAGINATION -------------- -->
+        <div class="pagination-centered">
+          <ul class="pagination" role="menubar" aria-label="Pagination">
+            {% if pagination.prev %}
+            <li class="arrow unavailable" aria-disabled="true"><a href="{{pagination.prev.link}}"  class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">&laquo;</a></li>
+            {% endif %}
+            {% for page in pagination.pages %}
+            {% if page.link %}
+            <li><a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a></li>
+            {% else %}
+            <li class="current"><a href="">{{page.title}}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if pagination.next %}
+            <li class="arrow"><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&raquo;</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </br>
+    </div>
+
+  </div>
+</div>
+
+<!-- ----------- SIDEBAR -------------- -->
+<aside class="small-12 large-3 columns">
+  <div class="sidebar">
+    {{widgets}}
+  </div>
+</aside>
+</div>
+{% endblock %}

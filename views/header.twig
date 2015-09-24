@@ -1,0 +1,34 @@
+<header>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">{{site.title}}</a></h1>
+        <a href="#"><img src="img/zengueBlanco.png" alt=""height="auto" width="130"></a>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <nav>
+          <ul id="top-menu-bts" class="right">
+              {% for item in menu.get_items %}
+                  <li class="active {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
+
+                  </li>
+                  {% if item.get_children %}
+                    <li class="has-dropdown {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
+                      <ul class="dropdown">
+                        {% for child in item.get_children %}
+                          <li class="active"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </li>
+                   {% endif %}
+              {% endfor %}
+          </ul>
+      </nav>
+    </section>
+  </nav>
+</header>

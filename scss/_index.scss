@@ -28,10 +28,18 @@
    $secondary-color: #9e0829;
 
    .menu a{color:$secondary-color;
-     :hover{color:$secondary-color;}
+     :hover, li.has-dropdown:hover {color:$secondary-color;}
      :active{color:$secondary-color;}
    }
-
+   .top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: #77c2a1;
+  }
+  @media only screen and (min-width: 40.063em){
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background-color: #555;
+    background: #272727;
+}
+}
   //radius
   .bg-radius {
   @include border-radius(6px);
@@ -244,11 +252,17 @@ li{
 //Section_Productos
 #productos{
   background-color:#DBE0DF;
+
+  [class*="block-grid-"] { //centraliza piezas en movil
+    display: block;
+    padding: 0 0 0 .6em;
+    margin: 0;
+}
 }
 
 .productos{
-  padding-top:3em;
-  padding-bottom:4em;
+  padding-top:2em;
+  padding-bottom:2em;
 }
 
 .producto{
@@ -390,8 +404,8 @@ li{
     background-color:white;
   }
   .posts{
-    padding-top:3em;
-    padding-bottom:4em;
+    padding-top:2em;
+    padding-bottom:2em;
   }
 }
 
@@ -406,10 +420,10 @@ li{
     padding-bottom:1em;
   }
 
-  a{
+  .contact_icon a{
     color:scale-color($primary-color, $lightness: 75%);
   }
-  a:hover{
+  contact_icon a:hover{
     color:scale-color($primary-color, $lightness: 50%);
   }
   .dados{
