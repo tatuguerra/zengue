@@ -21,11 +21,24 @@
  * @since    Timber 0.1
  */
 
+
+
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$portfolio_args = 'post_type=Portfolio';
-$context['portfolio'] = Timber::get_posts($portfolio_args);
+//$portfolio_args = 'post_type=Portfolio';
+//$context['portfolio'] = Timber::get_posts($portfolio_args);
 
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+//$context['posts'] = Timber::get_posts();
+//$templates = array('page-ablog.twig', 'archive.twig', 'index.twig');
+
+		$data = Timber::get_context();
+
+		$data['posts'] = Timber::get_posts();
+		print_r('test');
+		//Timber::render($templates, $data);
+
+//print_r($context);
+
+Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context, $data);

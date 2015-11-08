@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% include 'header.twig' %}
+<!-- ----------- CONTENT -------------- -->
+<div class="row content-wrap">
+  <div class="large-9 columns">
+
+<!-- -----------COLUMNA BLOG-------------- -->
+    <div class="row">
+      <div class="large-12 columns blog-col">
+       <!--Blog-->
+        <section id="productos">
+
+      <h2>PRODUCTOS</h2>
+      <div class="productos">
+        <ul class="medium-block-grid-4">
+          {% for joia in joias | slice(0,4) %}
+          <li>
+            <div class="producto">
+              <a href="{{joia.permalink}}">
+              <p>{{joia.title}}</p>
+              <img src="{{joia.thumbnail.src|resize(250, 300)}}" class="my-thumb-class" alt="Image for {{post.title}}">
+              </a>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="center"><a class="tiny button b2x" href="#">ver mas trabajos</a></div>
+
+</section>
+        <!-- -----------PAGINATION -------------- -->
+        <div class="pagination-centered">
+          <ul class="pagination" role="menubar" aria-label="Pagination">
+            {% if pagination.prev %}
+            <li class="arrow unavailable" aria-disabled="true"><a href="{{pagination.prev.link}}"  class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">&laquo;</a></li>
+            {% endif %}
+            {% for page in pagination.pages %}
+            {% if page.link %}
+            <li><a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a></li>
+            {% else %}
+            <li class="current"><a href="">{{page.title}}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if pagination.next %}
+            <li class="arrow"><a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">&raquo;</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </br>
+    </div>
+
+  </div>
+</div>
+
+<!-- ----------- SIDEBAR -------------- -->
+<aside class="small-12 large-3 columns">
+  <div class="sidebar">
+    {{widgets}}
+  </div>
+</aside>
+</div>
+{% endblock %}

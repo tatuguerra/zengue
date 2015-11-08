@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
+{% include 'header.twig' %}
 <section id="joia-single">
   <div class="row">
     <div class="small-4 columns">
@@ -12,14 +12,12 @@
   <br />
 
   <div class="row">
-    <div class="small-8 small-centered columns">
-      <ul class="small-block-grid-1 medium-block-grid-5 menu">
-        <li><a href="#" class="button small expand radius">todos</a></li>
-        <li><a href="#" class="button small expand radius">anillos</a></li>
-        <li><a href="#" class="button small expand radius">collares</a></li>
-        <li><a href="#" class="button small expand radius">pulseras</a></li>
-        <li><a href="#" class="button small expand radius">pendientes</a></li>
-      </ul>
+    <div class="small-10 small-centered columns">
+      <ul class="small-block-grid-1 medium-block-grid-6 menu">
+        {% for categoria_joias in categories %}
+            <li><a href="{{categoria_joias.link}}" class="button small expand radius">{{categoria_joias.name}}</a></li>
+        {% endfor %}
+        </ul>
     </div>
   </div>
 
@@ -75,6 +73,4 @@
     </div>
   </div>
 </section>
-
-<br />
 {% endblock %}

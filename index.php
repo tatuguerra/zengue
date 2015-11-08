@@ -19,7 +19,7 @@
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
 
-        $joias_args = 'post_type=Joia';
+  $joias_args = 'post_type=Joia';
 	$context['joias'] = Timber::get_posts($joias_args);
 
 	$sobre_args = 'post_type=Sobre';

@@ -1,0 +1,49 @@
+<?php
+//Register Portfolio Post Type
+
+function post_portfolio() {
+  $labels = array(
+    'name'               => _x( 'Portfolios', 'post type general name' ),
+    'singular_name'      => _x( 'Portfolio', 'post type singular name' ),
+    'add_new'            => _x( 'Añadir', 'book' ),
+    'add_new_item'       => __( 'Añadir Portfolio' ),
+    'edit_item'          => __( 'Edita Portfolio' ),
+    'new_item'           => __( 'Nuevo Portfolio' ),
+    'all_items'          => __( 'Todos los Portfolio' ),
+    'view_item'          => __( 'Vea Portfolio' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Portfolio'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our portfolio and portfolio specific data',
+    'public'        => true,
+    'menu_position' => 7,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+    'has_archive'   => true,
+  );
+  register_post_type( 'portfolio', $args );
+}
+add_action( 'init', 'post_portfolio' );
+
+function taxonomies_portfolio() {
+  $labels = array(
+    'name'              => _x( 'Portfolios', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Portfolio', 'taxonomy singular name' ),
+    'search_items'      => __( 'Busca de Portfolio' ),
+    'all_items'         => __( 'Todas los Portfolios' ),
+    'parent_item'       => __( 'Categoria Padre de Portfolio' ),
+    'parent_item_colon' => __( 'Categoria Padre de Portfolio:' ),
+    'edit_item'         => __( 'Edita Portfolios' ),
+    'update_item'       => __( 'Actualiza Portfolios' ),
+    'add_new_item'      => __( 'Añadir Portfolio' ),
+    'new_item_name'     => __( 'Añadir Portfolio' ),
+    'menu_name'         => __( 'Categorias de Portfolios' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'categoria_portfolio', 'portfolio', $args );
+}
+add_action( 'init', 'taxonomies_portfolio', 0 );

@@ -270,6 +270,8 @@ li{
   //height:280px;
   border: solid 2px $secondary-color;
   @include border-radius(20px);
+  position: relative;
+  overflow: hidden;
 }
 
 .producto a p{
@@ -283,8 +285,9 @@ li{
   z-index:1;
   position: absolute;
   height: auto;
-  width: 249px;
-  top: 343px;
+  width: 100%;
+  top: 80%;
+  overflow: hidden;
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
   -o-transition: all .6s ease;
@@ -293,7 +296,7 @@ li{
 }
 .producto a:hover p{
   opacity:1;
-  top:340px;
+  top:75%;
   -webkit-transition: all .6s ease;
   -moz-transition: all .6s ease;
   -o-transition: all .6s ease;

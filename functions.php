@@ -37,6 +37,8 @@ function load_scripts(){
   wp_enqueue_script('jquery');
 }
 
+//change post per page
+
 
 
 
@@ -74,25 +76,81 @@ add_action( 'init', 'post_joia' );
 
 function taxonomies_joia() {
   $labels = array(
-    'name'              => _x( 'Categorias Joia', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Categoria Joia', 'taxonomy singular name' ),
-    'search_items'      => __( 'Busca Categorias de Joia' ),
-    'all_items'         => __( 'Todas las Categorias de Joia' ),
-    'parent_item'       => __( 'Categoria Padre de Joia' ),
-    'parent_item_colon' => __( 'Categoria Padre de Joia:' ),
-    'edit_item'         => __( 'Edita Categoria de Joia' ),
-    'update_item'       => __( 'Actualiza Categoria de Joia' ),
-    'add_new_item'      => __( 'Añadir Catgoria de Joia' ),
-    'new_item_name'     => __( 'Añadir Categoria de Joia' ),
-    'menu_name'         => __( 'Catergorias de Joia' ),
+    'name'              => _x( 'Joias', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Joias', 'taxonomy singular name' ),
+    'search_items'      => __( 'Busca de Joias' ),
+    'all_items'         => __( 'Todas las Joias' ),
+    'parent_item'       => __( 'Categoria Padre de Joias' ),
+    'parent_item_colon' => __( 'Categoria Padre de Joias:' ),
+    'edit_item'         => __( 'Edita Joias' ),
+    'update_item'       => __( 'Actualiza Joias' ),
+    'add_new_item'      => __( 'Añadir Joia' ),
+    'new_item_name'     => __( 'Añadir Joia' ),
+    'menu_name'         => __( 'Categorias de Joias' ),
   );
   $args = array(
     'labels' => $labels,
     'hierarchical' => true,
   );
-  register_taxonomy( 'joia_categoria', 'joia', $args );
+  register_taxonomy( 'categoria_joias', 'joia', $args );
 }
 add_action( 'init', 'taxonomies_joia', 0 );
+
+    /*function my_home_query( $query ) {
+      if ( $query->is_main_query() && !is_admin() ) {
+        $query->set( 'post_type', array( 'Joia', 'post' ));
+      }
+    }
+    add_action( 'pre_get_posts', 'my_home_query' );*/
+
+//Register Portfolio Post Type
+
+function post_portfolio() {
+  $labels = array(
+    'name'               => _x( 'Portfolios', 'post type general name' ),
+    'singular_name'      => _x( 'Portfolio', 'post type singular name' ),
+    'add_new'            => _x( 'Añadir', 'book' ),
+    'add_new_item'       => __( 'Añadir Portfolio' ),
+    'edit_item'          => __( 'Edita Portfolio' ),
+    'new_item'           => __( 'Nuevo Portfolio' ),
+    'all_items'          => __( 'Todos los Portfolio' ),
+    'view_item'          => __( 'Vea Portfolio' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Portfolio'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our portfolio and portfolio specific data',
+    'public'        => true,
+    'menu_position' => 7,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+    'has_archive'   => true,
+  );
+  register_post_type( 'portfolio', $args );
+}
+add_action( 'init', 'post_portfolio' );
+
+function taxonomies_portfolio() {
+  $labels = array(
+    'name'              => _x( 'Portfolios', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Portfolio', 'taxonomy singular name' ),
+    'search_items'      => __( 'Busca de Portfolio' ),
+    'all_items'         => __( 'Todas los Portfolios' ),
+    'parent_item'       => __( 'Categoria Padre de Portfolio' ),
+    'parent_item_colon' => __( 'Categoria Padre de Portfolio:' ),
+    'edit_item'         => __( 'Edita Portfolios' ),
+    'update_item'       => __( 'Actualiza Portfolios' ),
+    'add_new_item'      => __( 'Añadir Portfolio' ),
+    'new_item_name'     => __( 'Añadir Portfolio' ),
+    'menu_name'         => __( 'Categorias de Portfolios' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'categoria_portfolio', 'portfolio', $args );
+}
+add_action( 'init', 'taxonomies_portfolio', 0 );
 
 
 //Register Sobre Post Type
@@ -123,32 +181,8 @@ function post_sobre() {
 add_action( 'init', 'post_sobre' );
 
 
-//Register Portfolio Post Type
 
-function post_portfolio() {
-  $labels = array(
-    'name'               => _x( 'Portfolios', 'post type general name' ),
-    'singular_name'      => _x( 'Portfolio', 'post type singular name' ),
-    'add_new'            => _x( 'Añadir', 'book' ),
-    'add_new_item'       => __( 'Añadir Portfolio' ),
-    'edit_item'          => __( 'Edita Portfolio' ),
-    'new_item'           => __( 'Nuevo Portfolio' ),
-    'all_items'          => __( 'Todos los Portfolio' ),
-    'view_item'          => __( 'Vea Portfolio' ),
-    'parent_item_colon'  => '',
-    'menu_name'          => 'Portfolio'
-  );
-  $args = array(
-    'labels'        => $labels,
-    'description'   => 'Holds our sobre and sobre specific data',
-    'public'        => true,
-    'menu_position' => 7,
-    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
-    'has_archive'   => false,
-  );
-  register_post_type( 'portfolio', $args );
-}
-add_action( 'init', 'post_portfolio' );
+
 
 // =======================================================================//
 // Foundation5 Gallery-Output with Clearing(JS)
